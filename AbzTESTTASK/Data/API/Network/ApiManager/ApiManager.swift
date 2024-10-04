@@ -10,8 +10,14 @@ import Foundation
 class APIManager: APIManagerProtocol {
     private let urlSession: URLSession
     
-    init(urlSession: URLSession = URLSession.shared) {
-        self.urlSession = urlSession
+    init() {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForResource = 60
+        self.urlSession = URLSession(
+            configuration: configuration,
+            delegate: MonitorInternetConnection(),
+            delegateQueue: .main
+        )
     }
     
     func initRequest(with url: URL) async throws -> Data {
