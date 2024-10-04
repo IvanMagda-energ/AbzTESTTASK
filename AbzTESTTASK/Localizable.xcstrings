@@ -1,0 +1,38 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "no.connection.view.text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no internet connection"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає підключення до Інтернету"
+          }
+        }
+      }
+    },
+    "try.again.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try again"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Спробуйте знову"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
