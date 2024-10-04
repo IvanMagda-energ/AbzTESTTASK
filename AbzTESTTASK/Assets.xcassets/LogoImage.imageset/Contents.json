@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "display-gamut" : "sRGB",
+      "filename" : "LogoSRGB.png",
+      "idiom" : "universal"
+    },
+    {
+      "display-gamut" : "display-P3",
+      "filename" : "LogoP3.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
