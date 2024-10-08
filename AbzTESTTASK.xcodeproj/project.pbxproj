@@ -31,8 +31,8 @@
 		CEC5DE932CB5535100F5EB4C /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6B2CB5535100F5EB4C /* TabBarItemView.swift */; };
 		CEC5DE942CB5535100F5EB4C /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6C2CB5535100F5EB4C /* TabbedItems.swift */; };
 		CEC5DE952CB5535100F5EB4C /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6E2CB5535100F5EB4C /* NoConnectionView.swift */; };
-		CEC5DE962CB5535100F5EB4C /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE702CB5535100F5EB4C /* UsersListView.swift */; };
-		CEC5DE972CB5535100F5EB4C /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE712CB5535100F5EB4C /* UsersListViewModel.swift */; };
+		CEC5DE962CB5535100F5EB4C /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE702CB5535100F5EB4C /* UsersView.swift */; };
+		CEC5DE972CB5535100F5EB4C /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE712CB5535100F5EB4C /* UsersViewModel.swift */; };
 		CEC5DE982CB5535100F5EB4C /* PrimaryFilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE742CB5535100F5EB4C /* PrimaryFilledButtonStyle.swift */; };
 		CEC5DE992CB5535100F5EB4C /* AbzTESTTASKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE772CB5535100F5EB4C /* AbzTESTTASKApp.swift */; };
 		CEC5DE9A2CB5535100F5EB4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE792CB5535100F5EB4C /* ContentView.swift */; };
@@ -40,6 +40,9 @@
 		CEC5DEA42CB5617200F5EB4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEA32CB5617200F5EB4C /* User.swift */; };
 		CEC5DEAD2CB57E0900F5EB4C /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */; };
 		CEC5DEB02CB57F9500F5EB4C /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEAF2CB57F9500F5EB4C /* AuthTokenRequest.swift */; };
+		CEC5DEB92CB5CAC500F5EB4C /* NoUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEB82CB5CAC500F5EB4C /* NoUsersView.swift */; };
+		CEC5DEBB2CB5CE0300F5EB4C /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEBA2CB5CE0300F5EB4C /* UsersListView.swift */; };
+		CEC5DEBD2CB5D6AD00F5EB4C /* UserListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEBC2CB5D6AD00F5EB4C /* UserListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +68,8 @@
 		CEC5DE6B2CB5535100F5EB4C /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
 		CEC5DE6C2CB5535100F5EB4C /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 		CEC5DE6E2CB5535100F5EB4C /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
-		CEC5DE702CB5535100F5EB4C /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
-		CEC5DE712CB5535100F5EB4C /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
+		CEC5DE702CB5535100F5EB4C /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		CEC5DE712CB5535100F5EB4C /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		CEC5DE742CB5535100F5EB4C /* PrimaryFilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryFilledButtonStyle.swift; sourceTree = "<group>"; };
 		CEC5DE772CB5535100F5EB4C /* AbzTESTTASKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbzTESTTASKApp.swift; sourceTree = "<group>"; };
 		CEC5DE782CB5535100F5EB4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +80,9 @@
 		CEC5DEA32CB5617200F5EB4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
 		CEC5DEAF2CB57F9500F5EB4C /* AuthTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
+		CEC5DEB82CB5CAC500F5EB4C /* NoUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUsersView.swift; sourceTree = "<group>"; };
+		CEC5DEBA2CB5CE0300F5EB4C /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		CEC5DEBC2CB5D6AD00F5EB4C /* UserListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRowView.swift; sourceTree = "<group>"; };
 		CEEB143A2CABE50200FA0F65 /* AbzTESTTASK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbzTESTTASK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,13 +225,16 @@
 			path = NoConnectionView;
 			sourceTree = "<group>";
 		};
-		CEC5DE722CB5535100F5EB4C /* UsersListView */ = {
+		CEC5DE722CB5535100F5EB4C /* UsersView */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5DE702CB5535100F5EB4C /* UsersListView.swift */,
-				CEC5DE712CB5535100F5EB4C /* UsersListViewModel.swift */,
+				CEC5DE702CB5535100F5EB4C /* UsersView.swift */,
+				CEC5DE712CB5535100F5EB4C /* UsersViewModel.swift */,
+				CEC5DEB82CB5CAC500F5EB4C /* NoUsersView.swift */,
+				CEC5DEBA2CB5CE0300F5EB4C /* UsersListView.swift */,
+				CEC5DEBC2CB5D6AD00F5EB4C /* UserListRowView.swift */,
 			);
-			path = UsersListView;
+			path = UsersView;
 			sourceTree = "<group>";
 		};
 		CEC5DE732CB5535100F5EB4C /* Views */ = {
@@ -237,7 +246,7 @@
 				CEC5DE692CB5535100F5EB4C /* Elements */,
 				CEC5DE6D2CB5535100F5EB4C /* MainTabBarView */,
 				CEC5DE6F2CB5535100F5EB4C /* NoConnectionView */,
-				CEC5DE722CB5535100F5EB4C /* UsersListView */,
+				CEC5DE722CB5535100F5EB4C /* UsersView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 				CEC5DEB12CB5B65C00F5EB4C /* Utils */,
 				CEC5DE732CB5535100F5EB4C /* Views */,
 				CEC5DE762CB5535100F5EB4C /* ViewStyles */,
+				CEC5DE7A2CB5535100F5EB4C /* Info.plist */,
 			);
 			path = AbzTESTTASK;
 			sourceTree = "<group>";
@@ -327,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC5DE7C2CB5535100F5EB4C /* AbzTESTTASK */,
-				CEC5DE7A2CB5535100F5EB4C /* Info.plist */,
 				CEEB143B2CABE50200FA0F65 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -415,10 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC5DEBD2CB5D6AD00F5EB4C /* UserListRowView.swift in Sources */,
 				CEC5DE812CB5535100F5EB4C /* UserListResponse.swift in Sources */,
 				CEC5DE822CB5535100F5EB4C /* ApiManager.swift in Sources */,
 				CEC5DE832CB5535100F5EB4C /* ApiManagerProtocol.swift in Sources */,
 				CEC5DE842CB5535100F5EB4C /* ReguestManager.swift in Sources */,
+				CEC5DEB92CB5CAC500F5EB4C /* NoUsersView.swift in Sources */,
 				CEC5DE852CB5535100F5EB4C /* ReguestManagerProtocol.swift in Sources */,
 				CEC5DE862CB5535100F5EB4C /* RequestManager+Extensions.swift in Sources */,
 				CEC5DE872CB5535100F5EB4C /* NetworkConnectionMonitor.swift in Sources */,
@@ -437,11 +448,12 @@
 				CEC5DE922CB5535100F5EB4C /* MainTabBarView.swift in Sources */,
 				CEC5DE932CB5535100F5EB4C /* TabBarItemView.swift in Sources */,
 				CEC5DEA02CB55F3000F5EB4C /* UsersRequest.swift in Sources */,
+				CEC5DEBB2CB5CE0300F5EB4C /* UsersListView.swift in Sources */,
 				CEC5DEA42CB5617200F5EB4C /* User.swift in Sources */,
 				CEC5DE942CB5535100F5EB4C /* TabbedItems.swift in Sources */,
 				CEC5DE952CB5535100F5EB4C /* NoConnectionView.swift in Sources */,
-				CEC5DE962CB5535100F5EB4C /* UsersListView.swift in Sources */,
-				CEC5DE972CB5535100F5EB4C /* UsersListViewModel.swift in Sources */,
+				CEC5DE962CB5535100F5EB4C /* UsersView.swift in Sources */,
+				CEC5DE972CB5535100F5EB4C /* UsersViewModel.swift in Sources */,
 				CEC5DE982CB5535100F5EB4C /* PrimaryFilledButtonStyle.swift in Sources */,
 				CEC5DE992CB5535100F5EB4C /* AbzTESTTASKApp.swift in Sources */,
 				CEC5DE9A2CB5535100F5EB4C /* ContentView.swift in Sources */,

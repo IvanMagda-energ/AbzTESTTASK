@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld" : {
-
-    },
     "authorisation.tab.item.title" : {
       "localizations" : {
         "en" : {
@@ -48,6 +45,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Немає підключення до Інтернету"
+          }
+        }
+      }
+    },
+    "no.user.view.text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There are no users yet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Користувачів ще немає"
           }
         }
       }

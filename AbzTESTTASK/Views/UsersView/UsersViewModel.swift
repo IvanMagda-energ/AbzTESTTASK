@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-final class UsersListViewModel {
+final class UsersViewModel {
     private let requestManager: RequestManagerProtocol
     var users = [User]()
     

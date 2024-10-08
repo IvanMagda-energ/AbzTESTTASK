@@ -15,7 +15,7 @@ struct ContentView: View {
         Group {
             switch selectedTab {
             case .userList:
-                UsersListView()
+                UsersView()
             case .authorisation:
                 AuthorisationView()
             }
