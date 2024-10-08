@@ -9,12 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     @State var connectionMonitor = MonitorInternetConnection()
+    @State var selectedTab: TabbedItems = .userList
     
     var body: some View {
-        Color.clear
-            .fullScreenCover(isPresented: $connectionMonitor.isOffline) {
-                NoConnectionView()
+        Group {
+            switch selectedTab {
+            case .userList:
+                UsersListView()
+            case .authorisation:
+                AuthorisationView()
             }
+            
+            MainTabBarView(selectedTab: $selectedTab)
+        }
+        .fullScreenCover(isPresented: $connectionMonitor.isOffline) {
+            NoConnectionView()
+        }
     }
 }
 
