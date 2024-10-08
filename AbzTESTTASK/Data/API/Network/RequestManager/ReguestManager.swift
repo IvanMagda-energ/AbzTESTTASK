@@ -10,26 +10,23 @@ import Foundation
 class RequestManager: RequestManagerProtocol {
     let apiManager: APIManagerProtocol
     
-    init(
-        apiManager: APIManagerProtocol = APIManager()
-    ) {
+    init(apiManager: APIManagerProtocol = APIManager()) {
         self.apiManager = apiManager
     }
     
-    func initRequest<T: Decodable>(with urlString: String) async throws -> T {
-        guard let url = URL(string: urlString) else {
-            throw NetworkError.invalidUrl
-        }
-        let data = try await apiManager.initRequest(with: url)
-        let decoded: T = try parser.parse(data: data)
-        return decoded
+    func requestAccessToken() async throws -> String {
+        let data = try await apiManager.initRequest(with: AuthTokenRequest.auth, authToken: "")
+        let token: APIToken = try parser.parse(data: data)
+        return token.token
     }
     
-    func getData(from urlString: String) async throws -> Data {
-        guard let url = URL(string: urlString) else {
-            throw NetworkError.invalidUrl
+    func initRequest<T: Decodable>(with data: RequestProtocol) async throws -> T {
+        var authToken = ""
+        if data.addAuthorisationToken {
+            authToken = try await requestAccessToken()
         }
-        let data = try await apiManager.initRequest(with: url)
-        return data
+        let data = try await apiManager.initRequest(with: data, authToken: authToken)
+        let decoded: T = try parser.parse(data: data)
+        return decoded
     }
 }

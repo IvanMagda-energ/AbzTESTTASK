@@ -8,8 +8,7 @@
 import Foundation
 
 protocol RequestManagerProtocol {
-    var apiManager: APIManagerProtocol { get }
-    var parser: DataParserProtocol { get }
-    func initRequest<T: Decodable>(with urlString: String) async throws -> T
-    func getData(from urlString: String) async throws -> Data
+  var apiManager: APIManagerProtocol { get }
+  var parser: DataParserProtocol { get }
+  func initRequest<T: Decodable>(with data: RequestProtocol) async throws -> T
 }

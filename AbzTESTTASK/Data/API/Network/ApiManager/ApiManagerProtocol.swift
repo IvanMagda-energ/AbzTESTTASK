@@ -8,6 +8,6 @@
 import Foundation
 
 protocol APIManagerProtocol {
-    func initRequest(with url: URL) async throws -> Data
+    func initRequest(with data: RequestProtocol, authToken: String) async throws -> Data
     
 }

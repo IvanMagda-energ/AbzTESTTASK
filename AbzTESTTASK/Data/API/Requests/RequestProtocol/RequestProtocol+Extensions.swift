@@ -8,7 +8,9 @@
 import Foundation
 
 extension RequestProtocol {
-    var host: String { APIConstants.baseHost }
+    var host: String {
+        APIConstants.baseUrl
+    }
     
     var addAuthorisationToken: Bool {
         return true

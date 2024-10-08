@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var connectionMonitor = MonitorInternetConnection()
+    @State var connectionMonitor = NetworkConnectionMonitor.shared
     @State var selectedTab: TabbedItems = .userList
     
     var body: some View {

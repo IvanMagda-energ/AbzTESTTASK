@@ -8,5 +8,5 @@
 import Foundation
 
 enum APIConstants {
-    static let baseHost: String = ""
+    static let baseUrl: String = "frontend-test-assignment-api.abz.agency"
 }

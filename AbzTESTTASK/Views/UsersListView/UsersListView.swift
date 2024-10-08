@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct UsersListView: View {
+    @State var viewModel = UsersListViewModel()
+    
     var body: some View {
         VStack (spacing: 0) {
             HeaderTextView(text: LocalizedKeys.headerText)
+            Text("\(viewModel.users.count)")
             
             Spacer()
+        }
+        .task {
+            await viewModel.getUsers()
         }
     }
 }
