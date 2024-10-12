@@ -17,6 +17,13 @@ class APIManager: APIManagerProtocol {
         self.connectionMonitor = connectionMonitor
     }
     
+    /// This method implement constructing and sending a network request based on the provided `RequestProtocol` object and the
+    /// authentication token. It asynchronously waits for the response and returns the resulting `Data` if the request succeeds.
+    /// If the request fails, it throws an error that can be handled by the caller.
+    /// - Parameters:
+    ///   - data: The request data conforming to `RequestProtocol`, which contains all necessary details (e.g., endpoint, parameters, method).
+    ///   - authToken: A string representing the authentication token to be included in the request headers for authorization.
+    /// - Returns: The raw `Data` object received from the server if the request is successful.
     func initRequest(with data: RequestProtocol, authToken: String = "") async throws -> Data {
         connectionMonitor.checkConnection()
         let (data, response) = try await urlSession.data(for: data.request(authToken: authToken))

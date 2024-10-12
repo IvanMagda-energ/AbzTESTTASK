@@ -33,6 +33,59 @@
         }
       }
     },
+    "failed.to.get.users.error.description" : {
+      "comment" : "Failed to get users error",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to get users."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалось отримати користувачів."
+          }
+        }
+      }
+    },
+    "failed.to.get.users.failure.reason %@" : {
+      "comment" : "Failed to get users failure reason",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problem occurred with getting users. Error: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виникла проблема з отриманням користувачів. Помилка: %@"
+          }
+        }
+      }
+    },
+    "failed.to.get.users.help.anchor" : {
+      "comment" : "Help anchor when failed to get users",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try again"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробуйте знову"
+          }
+        }
+      }
+    },
     "no.connection.view.text" : {
       "localizations" : {
         "en" : {
@@ -65,6 +118,22 @@
         }
       }
     },
+    "ok.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
     "try.again.button" : {
       "localizations" : {
         "en" : {
@@ -77,6 +146,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Спробуйте знову"
+          }
+        }
+      }
+    },
+    "unknown.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown error"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невідома помилка"
           }
         }
       }

@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// This enum conforms to the `RequestProtocol` and defines the necessary components for making requests
+/// to fetch user data from the API.
 enum UsersRequest: RequestProtocol {
     case getUsers(page: Int, count: Int)
     

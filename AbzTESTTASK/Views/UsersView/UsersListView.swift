@@ -10,8 +10,28 @@ import SwiftUI
 struct UsersListView: View {
     @Bindable var viewModel: UsersViewModel
     var body: some View {
-        List(viewModel.users) { user in
-            UserListRowView(user: user)
+        List {
+            ForEach(viewModel.users) { user in
+                let isLastUser = user.id == viewModel.users.last?.id
+                UserListRowView(user: user)
+                    .padding(isLastUser ? .top : .vertical)
+                    .onAppear {
+                        if isLastUser {
+                            Task {
+                                await viewModel.getUsers()
+                            }
+                        }
+                    }
+                    .listRowSeparator(isLastUser ? .hidden : .visible)
+            }
+            
+            if viewModel.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .scaleEffect(2)
+                    .padding()
+                    .id(UUID())
+            }
         }
         .listStyle(.plain)
     }

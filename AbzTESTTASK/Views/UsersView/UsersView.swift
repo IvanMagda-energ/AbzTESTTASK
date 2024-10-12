@@ -12,14 +12,30 @@ struct UsersView: View {
     
     var body: some View {
         VStack (spacing: 0) {
+            HeaderTextView(text: LocalizedKeys.headerText)
+            
             if viewModel.users.isEmpty {
                 NoUsersView()
             } else {
                 UsersListView(viewModel: viewModel)
             }
         }
-        .safeAreaInset(edge: .top) {
-            HeaderTextView(text: LocalizedKeys.headerText)
+        .frame(maxHeight: .infinity, alignment: .top)
+        .alert(
+            isPresented: $viewModel.hasError,
+            error: viewModel.error
+        ) { error in
+            if let recoverySuggestion = error.recoverySuggestion {
+                Button(recoverySuggestion, role: .cancel) {}
+            } else {
+                Button(LocalizedKeys.okButton, role: .cancel) {}
+            }
+        } message: { error in
+            if let failureReason = error.failureReason {
+                Text(failureReason + "\n" + (error.helpAnchor ?? ""))
+            } else {
+                Text(LocalizedKeys.unknownError, comment: "Unknown error")
+            }
         }
         .task {
             await viewModel.getUsers()
@@ -34,6 +50,8 @@ struct UsersView: View {
 extension UsersView {
     enum LocalizedKeys {
         static let headerText: LocalizedStringKey = "user.list.view.header.text"
+        static let okButton: LocalizedStringKey = "ok.button"
+        static let unknownError: LocalizedStringKey = "unknown.error"
     }
 }
 

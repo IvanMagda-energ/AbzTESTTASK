@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/// Request protocol default implementation
 extension RequestProtocol {
     var host: String {
         APIConstants.baseUrl
@@ -28,6 +28,11 @@ extension RequestProtocol {
         [:]
     }
     
+    /// This method constructs a `URLRequest` using the host, path, HTTP method, headers, and any
+    /// parameters defined in the conforming type. It also adds an authorization token to the request
+    /// if `addAuthorisationToken` is true.
+    /// - Parameter authToken: A `String` representing the authorization token to be included in the request header.
+    /// - Returns: A `URLRequest` configured with the specified parameters.
     func request(authToken: String) throws -> URLRequest {
         var component = URLComponents()
         component.scheme = "https"

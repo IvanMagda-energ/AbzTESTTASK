@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// This enum conforms to the `RequestProtocol` and defines the necessary components for making an API request
+/// to obtain an authentication token.
 enum AuthTokenRequest: RequestProtocol {
   case auth
 
