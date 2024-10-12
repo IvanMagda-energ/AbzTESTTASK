@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumeration representing the various types of HTTP request methods.
 enum RequestType: String {
     case GET
     case POST

@@ -9,19 +9,24 @@ import Foundation
 
 class APIManager: APIManagerProtocol {
     private let urlSession: URLSession
+    private let connectionMonitor: NetworkConnectionMonitor
     
-    init() {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForResource = 60
-        self.urlSession = URLSession(
-            configuration: configuration,
-            delegate: MonitorInternetConnection(),
-            delegateQueue: .main
-        )
+    init(urlSession: URLSession = URLSession.shared,
+         connectionMonitor: NetworkConnectionMonitor = NetworkConnectionMonitor.shared) {
+        self.urlSession = urlSession
+        self.connectionMonitor = connectionMonitor
     }
     
-    func initRequest(with url: URL) async throws -> Data {
-        let (data, response) = try await urlSession.data(from: url)
+    /// This method implement constructing and sending a network request based on the provided `RequestProtocol` object and the
+    /// authentication token. It asynchronously waits for the response and returns the resulting `Data` if the request succeeds.
+    /// If the request fails, it throws an error that can be handled by the caller.
+    /// - Parameters:
+    ///   - data: The request data conforming to `RequestProtocol`, which contains all necessary details (e.g., endpoint, parameters, method).
+    ///   - authToken: A string representing the authentication token to be included in the request headers for authorization.
+    /// - Returns: The raw `Data` object received from the server if the request is successful.
+    func initRequest(with data: RequestProtocol, authToken: String = "") async throws -> Data {
+        connectionMonitor.checkConnection()
+        let (data, response) = try await urlSession.data(for: data.request(authToken: authToken))
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else { throw NetworkError.invalidServerResponse }
         return data

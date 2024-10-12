@@ -10,26 +10,33 @@ import Foundation
 class RequestManager: RequestManagerProtocol {
     let apiManager: APIManagerProtocol
     
-    init(
-        apiManager: APIManagerProtocol = APIManager()
-    ) {
+    init(apiManager: APIManagerProtocol = APIManager()) {
         self.apiManager = apiManager
     }
     
-    func initRequest<T: Decodable>(with urlString: String) async throws -> T {
-        guard let url = URL(string: urlString) else {
-            throw NetworkError.invalidUrl
-        }
-        let data = try await apiManager.initRequest(with: url)
-        let decoded: T = try parser.parse(data: data)
-        return decoded
+    /// This method implement sending a network request to obtain an access token, which is required for authorized API requests.
+    /// The access token is returned as a string upon successful retrieval. If the request fails, it throws an error
+    /// that can be handled by the caller.
+    /// - Returns: A `String` representing the access token required for authenticated requests.
+    func requestAccessToken() async throws -> String {
+        let data = try await apiManager.initRequest(with: AuthTokenRequest.auth, authToken: "")
+        let token: APIToken = try parser.parse(data: data)
+        return token.token
     }
     
-    func getData(from urlString: String) async throws -> Data {
-        guard let url = URL(string: urlString) else {
-            throw NetworkError.invalidUrl
+    /// This method implement a network request based on the provided `RequestProtocol` object and decodes the response
+    /// into the specified generic type `T`, which must conform to `Decodable`. If the request is successful, it returns
+    /// the decoded object. If it fails, it throws an error.
+    /// - Parameter data: The request data conforming to `RequestProtocol`, which includes all necessary details like
+    ///   the endpoint, method, and parameters for the request.
+    /// - Returns: A decoded object of type `T`, representing the data received from the server.
+    func initRequest<T: Decodable>(with data: RequestProtocol) async throws -> T {
+        var authToken = ""
+        if data.addAuthorisationToken {
+            authToken = try await requestAccessToken()
         }
-        let data = try await apiManager.initRequest(with: url)
-        return data
+        let data = try await apiManager.initRequest(with: data, authToken: authToken)
+        let decoded: T = try parser.parse(data: data)
+        return decoded
     }
 }
