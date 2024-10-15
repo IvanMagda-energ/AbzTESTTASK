@@ -15,7 +15,7 @@ final class UsersViewModel {
         category: String(describing: UsersViewModel.self)
     )
     
-    private(set) var users = [User]()
+    private(set) var users = [User]().sorted()
     private var page = 1
     private var isAllPagesLoaded = false
     

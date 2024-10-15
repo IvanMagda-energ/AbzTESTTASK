@@ -17,3 +17,13 @@ struct User: Codable, Identifiable {
     let registrationTimestamp: Int
     let photo: String
 }
+
+extension User: Comparable {
+    var registrationDate: Date {
+        Date(timeIntervalSince1970: Double(registrationTimestamp))
+    }
+    
+    public static func < (lhs: User, rhs: User) -> Bool {
+        return lhs.registrationDate < rhs.registrationDate
+    }
+}
