@@ -17,7 +17,7 @@ struct ContentView: View {
             case .userList:
                 UsersView()
             case .authorisation:
-                AuthorisationView()
+                RegistrationView()
             }
             
             MainTabBarView(selectedTab: $selectedTab)

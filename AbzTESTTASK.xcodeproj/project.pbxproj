@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE5F96352CBEE3AB007E6F3C /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96342CBEE3AB007E6F3C /* NameTextField.swift */; };
+		CE5F96372CBEE3D0007E6F3C /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96362CBEE3D0007E6F3C /* EmailTextField.swift */; };
+		CE5F96392CBEE3F2007E6F3C /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96382CBEE3F2007E6F3C /* PhoneTextField.swift */; };
+		CE5F963B2CBEED05007E6F3C /* FocusedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F963A2CBEED05007E6F3C /* FocusedField.swift */; };
+		CE5F963F2CBFBD9A007E6F3C /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F963E2CBFBD99007E6F3C /* TextFieldState.swift */; };
+		CE5F96412CBFFC39007E6F3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96402CBFFC39007E6F3C /* Constants.swift */; };
 		CEC5DE7D2CB5535100F5EB4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */; };
 		CEC5DE7E2CB5535100F5EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE782CB5535100F5EB4C /* Assets.xcassets */; };
 		CEC5DE802CB5535100F5EB4C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE7B2CB5535100F5EB4C /* Localizable.xcstrings */; };
@@ -24,8 +30,8 @@
 		CEC5DE8C2CB5535100F5EB4C /* RequestProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE5B2CB5535100F5EB4C /* RequestProtocol+Extensions.swift */; };
 		CEC5DE8D2CB5535100F5EB4C /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE5E2CB5535100F5EB4C /* RequestType.swift */; };
 		CEC5DE8E2CB5535100F5EB4C /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE602CB5535100F5EB4C /* ApiConstants.swift */; };
-		CEC5DE8F2CB5535100F5EB4C /* AuthorisationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE652CB5535100F5EB4C /* AuthorisationView.swift */; };
-		CEC5DE902CB5535100F5EB4C /* AuthorisationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE662CB5535100F5EB4C /* AuthorisationViewModel.swift */; };
+		CEC5DE8F2CB5535100F5EB4C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE652CB5535100F5EB4C /* RegistrationView.swift */; };
+		CEC5DE902CB5535100F5EB4C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE662CB5535100F5EB4C /* RegistrationViewModel.swift */; };
 		CEC5DE912CB5535100F5EB4C /* HeaderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE682CB5535100F5EB4C /* HeaderTextView.swift */; };
 		CEC5DE922CB5535100F5EB4C /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6A2CB5535100F5EB4C /* MainTabBarView.swift */; };
 		CEC5DE932CB5535100F5EB4C /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6B2CB5535100F5EB4C /* TabBarItemView.swift */; };
@@ -46,6 +52,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE5F96342CBEE3AB007E6F3C /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		CE5F96362CBEE3D0007E6F3C /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		CE5F96382CBEE3F2007E6F3C /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
+		CE5F963A2CBEED05007E6F3C /* FocusedField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedField.swift; sourceTree = "<group>"; };
+		CE5F963E2CBFBD99007E6F3C /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
+		CE5F96402CBFFC39007E6F3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC5DE4B2CB5535100F5EB4C /* UserListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListResponse.swift; sourceTree = "<group>"; };
 		CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
@@ -61,8 +73,8 @@
 		CEC5DE5E2CB5535100F5EB4C /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		CEC5DE602CB5535100F5EB4C /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CEC5DE652CB5535100F5EB4C /* AuthorisationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationView.swift; sourceTree = "<group>"; };
-		CEC5DE662CB5535100F5EB4C /* AuthorisationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationViewModel.swift; sourceTree = "<group>"; };
+		CEC5DE652CB5535100F5EB4C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		CEC5DE662CB5535100F5EB4C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CEC5DE682CB5535100F5EB4C /* HeaderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextView.swift; sourceTree = "<group>"; };
 		CEC5DE6A2CB5535100F5EB4C /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		CEC5DE6B2CB5535100F5EB4C /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -97,6 +109,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE5F96332CBEE365007E6F3C /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F96342CBEE3AB007E6F3C /* NameTextField.swift */,
+				CE5F96362CBEE3D0007E6F3C /* EmailTextField.swift */,
+				CE5F96382CBEE3F2007E6F3C /* PhoneTextField.swift */,
+				CE5F963A2CBEED05007E6F3C /* FocusedField.swift */,
+				CE5F963E2CBFBD99007E6F3C /* TextFieldState.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		CEC5DE4F2CB5535100F5EB4C /* ApiManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,13 +214,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CEC5DE672CB5535100F5EB4C /* AuthorisationView */ = {
+		CEC5DE672CB5535100F5EB4C /* RegistrationView */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5DE652CB5535100F5EB4C /* AuthorisationView.swift */,
-				CEC5DE662CB5535100F5EB4C /* AuthorisationViewModel.swift */,
+				CE5F96332CBEE365007E6F3C /* Elements */,
+				CEC5DE652CB5535100F5EB4C /* RegistrationView.swift */,
+				CEC5DE662CB5535100F5EB4C /* RegistrationViewModel.swift */,
 			);
-			path = AuthorisationView;
+			path = RegistrationView;
 			sourceTree = "<group>";
 		};
 		CEC5DE692CB5535100F5EB4C /* Elements */ = {
@@ -242,7 +267,7 @@
 			children = (
 				CEC5DE772CB5535100F5EB4C /* AbzTESTTASKApp.swift */,
 				CEC5DE792CB5535100F5EB4C /* ContentView.swift */,
-				CEC5DE672CB5535100F5EB4C /* AuthorisationView */,
+				CEC5DE672CB5535100F5EB4C /* RegistrationView */,
 				CEC5DE692CB5535100F5EB4C /* Elements */,
 				CEC5DE6D2CB5535100F5EB4C /* MainTabBarView */,
 				CEC5DE6F2CB5535100F5EB4C /* NoConnectionView */,
@@ -329,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC5DE542CB5535100F5EB4C /* NetworkConnectionMonitor.swift */,
+				CE5F96402CBFFC39007E6F3C /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -425,6 +451,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC5DEBD2CB5D6AD00F5EB4C /* UserListRowView.swift in Sources */,
+				CE5F96352CBEE3AB007E6F3C /* NameTextField.swift in Sources */,
+				CE5F96372CBEE3D0007E6F3C /* EmailTextField.swift in Sources */,
 				CEC5DE812CB5535100F5EB4C /* UserListResponse.swift in Sources */,
 				CEC5DE822CB5535100F5EB4C /* ApiManager.swift in Sources */,
 				CEC5DE832CB5535100F5EB4C /* ApiManagerProtocol.swift in Sources */,
@@ -432,6 +460,8 @@
 				CEC5DEB92CB5CAC500F5EB4C /* NoUsersView.swift in Sources */,
 				CEC5DE852CB5535100F5EB4C /* ReguestManagerProtocol.swift in Sources */,
 				CEC5DE862CB5535100F5EB4C /* RequestManager+Extensions.swift in Sources */,
+				CE5F96392CBEE3F2007E6F3C /* PhoneTextField.swift in Sources */,
+				CE5F963B2CBEED05007E6F3C /* FocusedField.swift in Sources */,
 				CEC5DE872CB5535100F5EB4C /* NetworkConnectionMonitor.swift in Sources */,
 				CEC5DE882CB5535100F5EB4C /* NetworkError.swift in Sources */,
 				CEC5DE892CB5535100F5EB4C /* DataParser.swift in Sources */,
@@ -440,12 +470,14 @@
 				CEC5DEB02CB57F9500F5EB4C /* AuthTokenRequest.swift in Sources */,
 				CEC5DE8B2CB5535100F5EB4C /* RequestProtocol.swift in Sources */,
 				CEC5DE8C2CB5535100F5EB4C /* RequestProtocol+Extensions.swift in Sources */,
+				CE5F96412CBFFC39007E6F3C /* Constants.swift in Sources */,
 				CEC5DE8D2CB5535100F5EB4C /* RequestType.swift in Sources */,
 				CEC5DE8E2CB5535100F5EB4C /* ApiConstants.swift in Sources */,
-				CEC5DE8F2CB5535100F5EB4C /* AuthorisationView.swift in Sources */,
-				CEC5DE902CB5535100F5EB4C /* AuthorisationViewModel.swift in Sources */,
+				CEC5DE8F2CB5535100F5EB4C /* RegistrationView.swift in Sources */,
+				CEC5DE902CB5535100F5EB4C /* RegistrationViewModel.swift in Sources */,
 				CEC5DE912CB5535100F5EB4C /* HeaderTextView.swift in Sources */,
 				CEC5DE922CB5535100F5EB4C /* MainTabBarView.swift in Sources */,
+				CE5F963F2CBFBD9A007E6F3C /* TextFieldState.swift in Sources */,
 				CEC5DE932CB5535100F5EB4C /* TabBarItemView.swift in Sources */,
 				CEC5DEA02CB55F3000F5EB4C /* UsersRequest.swift in Sources */,
 				CEC5DEBB2CB5CE0300F5EB4C /* UsersListView.swift in Sources */,
