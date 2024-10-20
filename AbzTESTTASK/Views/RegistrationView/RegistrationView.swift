@@ -8,44 +8,51 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @FocusState var focusedField: FocusedField?
-    @State var username = ""
-    @State var email = ""
+    @State private var viewModel = RegistrationViewModel()
+    @FocusState private var focusedField: FocusedField?
+    @State private var username = ""
+    @State private var email = ""
     @State private var phone = ""
     @State private var isEmailCorrect = false
     @State private var isPhoneCorrect = false
+    @State private var selectedPosition: Position?
     
     private let spacing: CGFloat = 16
     
     var body: some View {
-        VStack (spacing: spacing) {
-            HeaderTextView(text: LocalizedKeys.headerText)
-            
-            NameTextField(
-                name: $username,
-                focusedField: _focusedField
-            )
-            .padding(.horizontal)
-            .padding(.top)
-            
-            EmailTextField(
-                email: $email,
-                isEmailCorrect: $isEmailCorrect,
-                focusedField: _focusedField
-            )
-            .padding(.horizontal)
-            
-            PhoneTextField(
-                phone: $phone, isPhoneCorrect: $isPhoneCorrect,
-                focusedField: _focusedField
-            )
-            .padding(.horizontal)
-            
-            Button(LocalizedKeys.signUpButton) {}
-            .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
-            
+        ScrollView {
+            VStack (spacing: spacing) {
+                HeaderTextView(text: LocalizedKeys.headerText)
+                
+                UserCredentialsSectionView(
+                    focusedField: _focusedField,
+                    username: $username,
+                    email: $email,
+                    phone: $phone,
+                    isEmailCorrect: $isEmailCorrect,
+                    isPhoneCorrect: $isPhoneCorrect
+                )
+                .padding(.top)
+                .padding(.horizontal)
+                
+                UserPositionSectionView(
+                    positions: viewModel.positions,
+                    selectedPosition: $selectedPosition
+                )
+                .padding()
+                
+                UserPhotoSectionView()
+                    .padding(.horizontal)
+                
+                Button(LocalizedKeys.signUpButton) {}
+                    .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
+                
+            }
+            .frame(maxHeight: .infinity, alignment: .top)
+            .task {
+                await viewModel.getPositions()
+            }
         }
-        .frame(maxHeight: .infinity, alignment: .top)
     }
 }
 

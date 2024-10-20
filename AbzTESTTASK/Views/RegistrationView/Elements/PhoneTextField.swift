@@ -54,6 +54,8 @@ struct PhoneTextField: View {
                     Text(LocalizedKeys.required)
                 case .incorrectValueError:
                     Text(LocalizedKeys.invalidPhone)
+                case .initial:
+                    Text(LocalizedKeys.phoneFormatExample)
                 default:
                     EmptyView()
                 }
@@ -103,6 +105,7 @@ extension PhoneTextField {
         static let placeholder: LocalizedStringKey = "phone.textfield.placeholder"
         static let required: LocalizedStringKey = "required.field"
         static let invalidPhone: LocalizedStringKey = "invalid.phone.format"
+        static let phoneFormatExample: String = "+38 (XXX) XXX - XX - XX"
     }
 }
 

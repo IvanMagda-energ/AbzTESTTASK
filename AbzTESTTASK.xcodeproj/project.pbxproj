@@ -13,10 +13,19 @@
 		CE5F963B2CBEED05007E6F3C /* FocusedField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F963A2CBEED05007E6F3C /* FocusedField.swift */; };
 		CE5F963F2CBFBD9A007E6F3C /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F963E2CBFBD99007E6F3C /* TextFieldState.swift */; };
 		CE5F96412CBFFC39007E6F3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96402CBFFC39007E6F3C /* Constants.swift */; };
+		CE5F96442CC0384D007E6F3C /* UserPositionsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96432CC0384D007E6F3C /* UserPositionsRequest.swift */; };
+		CE5F96462CC03AC4007E6F3C /* PositionsResponce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96452CC03AC4007E6F3C /* PositionsResponce.swift */; };
+		CE5F96492CC04332007E6F3C /* CheckToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96482CC04332007E6F3C /* CheckToggleStyle.swift */; };
+		CE5F964F2CC3A7AE007E6F3C /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F964E2CC3A7AE007E6F3C /* NewUser.swift */; };
+		CE5F96532CC4DE61007E6F3C /* PositionToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96522CC4DE61007E6F3C /* PositionToggleView.swift */; };
+		CE5F96562CC501E4007E6F3C /* UserCredentialsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96552CC501E4007E6F3C /* UserCredentialsSectionView.swift */; };
+		CE5F96582CC503FC007E6F3C /* UserPositionSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96572CC503FC007E6F3C /* UserPositionSectionView.swift */; };
+		CE5F965B2CC50585007E6F3C /* MockUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F965A2CC50585007E6F3C /* MockUserData.swift */; };
+		CE5F965D2CC51AEF007E6F3C /* UserPhotoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F965C2CC51AEF007E6F3C /* UserPhotoSectionView.swift */; };
 		CEC5DE7D2CB5535100F5EB4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */; };
 		CEC5DE7E2CB5535100F5EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE782CB5535100F5EB4C /* Assets.xcassets */; };
 		CEC5DE802CB5535100F5EB4C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE7B2CB5535100F5EB4C /* Localizable.xcstrings */; };
-		CEC5DE812CB5535100F5EB4C /* UserListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE4B2CB5535100F5EB4C /* UserListResponse.swift */; };
+		CEC5DE812CB5535100F5EB4C /* UsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */; };
 		CEC5DE822CB5535100F5EB4C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */; };
 		CEC5DE832CB5535100F5EB4C /* ApiManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */; };
 		CEC5DE842CB5535100F5EB4C /* ReguestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE502CB5535100F5EB4C /* ReguestManager.swift */; };
@@ -43,7 +52,6 @@
 		CEC5DE992CB5535100F5EB4C /* AbzTESTTASKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE772CB5535100F5EB4C /* AbzTESTTASKApp.swift */; };
 		CEC5DE9A2CB5535100F5EB4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE792CB5535100F5EB4C /* ContentView.swift */; };
 		CEC5DEA02CB55F3000F5EB4C /* UsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE9F2CB55F3000F5EB4C /* UsersRequest.swift */; };
-		CEC5DEA42CB5617200F5EB4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEA32CB5617200F5EB4C /* User.swift */; };
 		CEC5DEAD2CB57E0900F5EB4C /* APIToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */; };
 		CEC5DEB02CB57F9500F5EB4C /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEAF2CB57F9500F5EB4C /* AuthTokenRequest.swift */; };
 		CEC5DEB92CB5CAC500F5EB4C /* NoUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DEB82CB5CAC500F5EB4C /* NoUsersView.swift */; };
@@ -58,7 +66,16 @@
 		CE5F963A2CBEED05007E6F3C /* FocusedField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedField.swift; sourceTree = "<group>"; };
 		CE5F963E2CBFBD99007E6F3C /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
 		CE5F96402CBFFC39007E6F3C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		CEC5DE4B2CB5535100F5EB4C /* UserListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListResponse.swift; sourceTree = "<group>"; };
+		CE5F96432CC0384D007E6F3C /* UserPositionsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPositionsRequest.swift; sourceTree = "<group>"; };
+		CE5F96452CC03AC4007E6F3C /* PositionsResponce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionsResponce.swift; sourceTree = "<group>"; };
+		CE5F96482CC04332007E6F3C /* CheckToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckToggleStyle.swift; sourceTree = "<group>"; };
+		CE5F964E2CC3A7AE007E6F3C /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
+		CE5F96522CC4DE61007E6F3C /* PositionToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionToggleView.swift; sourceTree = "<group>"; };
+		CE5F96552CC501E4007E6F3C /* UserCredentialsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsSectionView.swift; sourceTree = "<group>"; };
+		CE5F96572CC503FC007E6F3C /* UserPositionSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPositionSectionView.swift; sourceTree = "<group>"; };
+		CE5F965A2CC50585007E6F3C /* MockUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserData.swift; sourceTree = "<group>"; };
+		CE5F965C2CC51AEF007E6F3C /* UserPhotoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoSectionView.swift; sourceTree = "<group>"; };
+		CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
 		CEC5DE502CB5535100F5EB4C /* ReguestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReguestManager.swift; sourceTree = "<group>"; };
@@ -89,7 +106,6 @@
 		CEC5DE7A2CB5535100F5EB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC5DE7B2CB5535100F5EB4C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		CEC5DE9F2CB55F3000F5EB4C /* UsersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequest.swift; sourceTree = "<group>"; };
-		CEC5DEA32CB5617200F5EB4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIToken.swift; sourceTree = "<group>"; };
 		CEC5DEAF2CB57F9500F5EB4C /* AuthTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
 		CEC5DEB82CB5CAC500F5EB4C /* NoUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoUsersView.swift; sourceTree = "<group>"; };
@@ -112,13 +128,67 @@
 		CE5F96332CBEE365007E6F3C /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F96542CC500FB007E6F3C /* Enums */,
 				CE5F96342CBEE3AB007E6F3C /* NameTextField.swift */,
 				CE5F96362CBEE3D0007E6F3C /* EmailTextField.swift */,
 				CE5F96382CBEE3F2007E6F3C /* PhoneTextField.swift */,
+				CE5F96522CC4DE61007E6F3C /* PositionToggleView.swift */,
+				CE5F96552CC501E4007E6F3C /* UserCredentialsSectionView.swift */,
+				CE5F96572CC503FC007E6F3C /* UserPositionSectionView.swift */,
+				CE5F965C2CC51AEF007E6F3C /* UserPhotoSectionView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		CE5F96422CC037E5007E6F3C /* UserPositionsRequest */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F96432CC0384D007E6F3C /* UserPositionsRequest.swift */,
+			);
+			path = UserPositionsRequest;
+			sourceTree = "<group>";
+		};
+		CE5F96472CC04253007E6F3C /* ToggleStyles */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F96482CC04332007E6F3C /* CheckToggleStyle.swift */,
+			);
+			path = ToggleStyles;
+			sourceTree = "<group>";
+		};
+		CE5F96502CC3A7B7007E6F3C /* GET */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */,
+				CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */,
+				CE5F96452CC03AC4007E6F3C /* PositionsResponce.swift */,
+			);
+			path = GET;
+			sourceTree = "<group>";
+		};
+		CE5F96512CC3A7C5007E6F3C /* POST */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F964E2CC3A7AE007E6F3C /* NewUser.swift */,
+			);
+			path = POST;
+			sourceTree = "<group>";
+		};
+		CE5F96542CC500FB007E6F3C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
 				CE5F963A2CBEED05007E6F3C /* FocusedField.swift */,
 				CE5F963E2CBFBD99007E6F3C /* TextFieldState.swift */,
 			);
-			path = Elements;
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		CE5F96592CC50512007E6F3C /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				CE5F965A2CC50585007E6F3C /* MockUserData.swift */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 		CEC5DE4F2CB5535100F5EB4C /* ApiManager */ = {
@@ -181,6 +251,7 @@
 		CEC5DE5F2CB5535100F5EB4C /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F96422CC037E5007E6F3C /* UserPositionsRequest */,
 				CEC5DEAE2CB57F7000F5EB4C /* AuthTokenRequest */,
 				CEC5DE5D2CB5535100F5EB4C /* UsersRequest */,
 				CEC5DE5C2CB5535100F5EB4C /* RequestProtocol */,
@@ -201,6 +272,7 @@
 		CEC5DE622CB5535100F5EB4C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F96592CC50512007E6F3C /* MockData */,
 				CEC5DE612CB5535100F5EB4C /* API */,
 			);
 			path = Data;
@@ -287,6 +359,7 @@
 		CEC5DE762CB5535100F5EB4C /* ViewStyles */ = {
 			isa = PBXGroup;
 			children = (
+				CE5F96472CC04253007E6F3C /* ToggleStyles */,
 				CEC5DE752CB5535100F5EB4C /* ButtonStyles */,
 			);
 			path = ViewStyles;
@@ -335,9 +408,8 @@
 		CEC5DEA22CB5611400F5EB4C /* ApiModels */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5DE4B2CB5535100F5EB4C /* UserListResponse.swift */,
-				CEC5DEA32CB5617200F5EB4C /* User.swift */,
-				CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */,
+				CE5F96512CC3A7C5007E6F3C /* POST */,
+				CE5F96502CC3A7B7007E6F3C /* GET */,
 			);
 			path = ApiModels;
 			sourceTree = "<group>";
@@ -452,25 +524,32 @@
 			files = (
 				CEC5DEBD2CB5D6AD00F5EB4C /* UserListRowView.swift in Sources */,
 				CE5F96352CBEE3AB007E6F3C /* NameTextField.swift in Sources */,
+				CE5F965B2CC50585007E6F3C /* MockUserData.swift in Sources */,
 				CE5F96372CBEE3D0007E6F3C /* EmailTextField.swift in Sources */,
-				CEC5DE812CB5535100F5EB4C /* UserListResponse.swift in Sources */,
+				CE5F965D2CC51AEF007E6F3C /* UserPhotoSectionView.swift in Sources */,
+				CEC5DE812CB5535100F5EB4C /* UsersResponse.swift in Sources */,
 				CEC5DE822CB5535100F5EB4C /* ApiManager.swift in Sources */,
 				CEC5DE832CB5535100F5EB4C /* ApiManagerProtocol.swift in Sources */,
 				CEC5DE842CB5535100F5EB4C /* ReguestManager.swift in Sources */,
 				CEC5DEB92CB5CAC500F5EB4C /* NoUsersView.swift in Sources */,
 				CEC5DE852CB5535100F5EB4C /* ReguestManagerProtocol.swift in Sources */,
 				CEC5DE862CB5535100F5EB4C /* RequestManager+Extensions.swift in Sources */,
+				CE5F96492CC04332007E6F3C /* CheckToggleStyle.swift in Sources */,
 				CE5F96392CBEE3F2007E6F3C /* PhoneTextField.swift in Sources */,
 				CE5F963B2CBEED05007E6F3C /* FocusedField.swift in Sources */,
+				CE5F964F2CC3A7AE007E6F3C /* NewUser.swift in Sources */,
 				CEC5DE872CB5535100F5EB4C /* NetworkConnectionMonitor.swift in Sources */,
 				CEC5DE882CB5535100F5EB4C /* NetworkError.swift in Sources */,
 				CEC5DE892CB5535100F5EB4C /* DataParser.swift in Sources */,
 				CEC5DEAD2CB57E0900F5EB4C /* APIToken.swift in Sources */,
 				CEC5DE8A2CB5535100F5EB4C /* DataParserProtocol.swift in Sources */,
+				CE5F96462CC03AC4007E6F3C /* PositionsResponce.swift in Sources */,
 				CEC5DEB02CB57F9500F5EB4C /* AuthTokenRequest.swift in Sources */,
 				CEC5DE8B2CB5535100F5EB4C /* RequestProtocol.swift in Sources */,
 				CEC5DE8C2CB5535100F5EB4C /* RequestProtocol+Extensions.swift in Sources */,
+				CE5F96532CC4DE61007E6F3C /* PositionToggleView.swift in Sources */,
 				CE5F96412CBFFC39007E6F3C /* Constants.swift in Sources */,
+				CE5F96442CC0384D007E6F3C /* UserPositionsRequest.swift in Sources */,
 				CEC5DE8D2CB5535100F5EB4C /* RequestType.swift in Sources */,
 				CEC5DE8E2CB5535100F5EB4C /* ApiConstants.swift in Sources */,
 				CEC5DE8F2CB5535100F5EB4C /* RegistrationView.swift in Sources */,
@@ -478,15 +557,16 @@
 				CEC5DE912CB5535100F5EB4C /* HeaderTextView.swift in Sources */,
 				CEC5DE922CB5535100F5EB4C /* MainTabBarView.swift in Sources */,
 				CE5F963F2CBFBD9A007E6F3C /* TextFieldState.swift in Sources */,
+				CE5F96582CC503FC007E6F3C /* UserPositionSectionView.swift in Sources */,
 				CEC5DE932CB5535100F5EB4C /* TabBarItemView.swift in Sources */,
 				CEC5DEA02CB55F3000F5EB4C /* UsersRequest.swift in Sources */,
 				CEC5DEBB2CB5CE0300F5EB4C /* UsersListView.swift in Sources */,
-				CEC5DEA42CB5617200F5EB4C /* User.swift in Sources */,
 				CEC5DE942CB5535100F5EB4C /* TabbedItems.swift in Sources */,
 				CEC5DE952CB5535100F5EB4C /* NoConnectionView.swift in Sources */,
 				CEC5DE962CB5535100F5EB4C /* UsersView.swift in Sources */,
 				CEC5DE972CB5535100F5EB4C /* UsersViewModel.swift in Sources */,
 				CEC5DE982CB5535100F5EB4C /* PrimaryFilledButtonStyle.swift in Sources */,
+				CE5F96562CC501E4007E6F3C /* UserCredentialsSectionView.swift in Sources */,
 				CEC5DE992CB5535100F5EB4C /* AbzTESTTASKApp.swift in Sources */,
 				CEC5DE9A2CB5535100F5EB4C /* ContentView.swift in Sources */,
 			);

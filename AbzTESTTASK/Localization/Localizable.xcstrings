@@ -217,6 +217,22 @@
         }
       }
     },
+    "position.section.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select your position"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть свою позицію"
+          }
+        }
+      }
+    },
     "required.field" : {
       "localizations" : {
         "en" : {
@@ -229,6 +245,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Обов'язкове поле"
+          }
+        }
+      }
+    },
+    "required.image" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo is required"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фото обов'язкове"
           }
         }
       }
@@ -277,6 +309,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Невідома помилка"
+          }
+        }
+      }
+    },
+    "upload.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантажити"
+          }
+        }
+      }
+    },
+    "upload.user.image.placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload your photo"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантажте свою фотографію"
           }
         }
       }
