@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TextFieldState {
+enum FieldState {
     case initial
     case focused
     case emptyFieldError

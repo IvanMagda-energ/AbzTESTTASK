@@ -1,5 +1,5 @@
 //
-//  PositionsResponce.swift
+//  PositionsResponse.swift
 //  AbzTESTTASK
 //
 //  Created by Ivan Magda on 16.10.2024.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Responce
-struct PositionsResponce: Codable {
+struct PositionsResponse: Codable {
     let success: Bool
     let positions: [Position]
 }

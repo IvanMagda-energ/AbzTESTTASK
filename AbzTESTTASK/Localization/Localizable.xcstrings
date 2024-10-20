@@ -36,6 +36,23 @@
         }
       }
     },
+    "camera.picker.button" : {
+      "comment" : "Title for camera picker button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Камера"
+          }
+        }
+      }
+    },
     "email.textfield.placeholder" : {
       "localizations" : {
         "en" : {
@@ -101,6 +118,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Спробуйте знову"
+          }
+        }
+      }
+    },
+    "gallery.picker.button" : {
+      "comment" : "Title for gallery picker button",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gallery"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Галерея"
           }
         }
       }
@@ -213,6 +247,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Телефон"
+          }
+        }
+      }
+    },
+    "picker.menu.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose how you want to add a photo"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть спосіб додавання фотографіїv"
           }
         }
       }

@@ -11,7 +11,7 @@ struct NameTextField: View {
     @Binding var name: String
     @FocusState var focusedField: FocusedField?
     
-    @State private var fieldState: TextFieldState = .initial
+    @State private var fieldState: FieldState = .initial
     @State private var isEdited = false
     
     private let textFieldHeight: CGFloat = 56

@@ -25,6 +25,10 @@ struct UserPositionSectionView: View {
                     position: position,
                     selectedPosition: $selectedPosition
                 )
+                .onAppear {
+                    // Set initial state for positions as first item in positions array
+                    selectedPosition = positions.first
+                }
                 .padding(.horizontal)
             }
         }

@@ -16,14 +16,16 @@ struct RegistrationView: View {
     @State private var isEmailCorrect = false
     @State private var isPhoneCorrect = false
     @State private var selectedPosition: Position?
+    @State private var isShowPhotoPickerMenu = false
+    @State private var image: UIImage?
     
     private let spacing: CGFloat = 16
     
     var body: some View {
+        HeaderTextView(text: LocalizedKeys.headerText)
+        
         ScrollView {
             VStack (spacing: spacing) {
-                HeaderTextView(text: LocalizedKeys.headerText)
-                
                 UserCredentialsSectionView(
                     focusedField: _focusedField,
                     username: $username,
@@ -41,7 +43,7 @@ struct RegistrationView: View {
                 )
                 .padding()
                 
-                UserPhotoSectionView()
+                UserPhotoSectionView(image: $image)
                     .padding(.horizontal)
                 
                 Button(LocalizedKeys.signUpButton) {}
@@ -49,10 +51,20 @@ struct RegistrationView: View {
                 
             }
             .frame(maxHeight: .infinity, alignment: .top)
-            .task {
+            .task { @MainActor in
                 await viewModel.getPositions()
             }
         }
+        .overlay {
+            if viewModel.isLoading {
+                ZStack {
+                    Color.black.opacity(0.3)
+                    ProgressView()
+                }
+                .ignoresSafeArea()
+            }
+        }
+        .animation(.default, value: viewModel.isLoading)
     }
 }
 

@@ -36,7 +36,7 @@ final class RegistrationViewModel {
         
         defer {
             isLoading = false
-            logger.info("\(#function) Request for position completed.")
+            logger.info("\(#function) Request for position completed, successful fetched \(self.positions.count) items.")
         }
         
         logger.info("\(#function) Starting request for user positions.")
@@ -44,11 +44,12 @@ final class RegistrationViewModel {
             isLoading = true
             
             let request = UserPositionsRequest.getPositions
-            let result: PositionsResponce = try await requestManager.initRequest(with: request)
+            let result: PositionsResponse = try await requestManager.initRequest(with: request)
             positions.append(contentsOf: result.positions)
-            NSLog("<< \(positions)")
         } catch {
-            
+            self.error = ViewModelLocalizedError.failedToGetPositions(error)
+            self.hasError = true
+            logger.info("\(#function) Failed to get positions with error: \(error.localizedDescription)")
         }
     }
 }

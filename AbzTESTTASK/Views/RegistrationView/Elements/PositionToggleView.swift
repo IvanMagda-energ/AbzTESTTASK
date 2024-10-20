@@ -25,6 +25,7 @@ struct PositionToggleView: View {
                         isOn = false
                         return
                     }
+                    isOn = true
                 }
             Spacer()
         }

@@ -12,7 +12,7 @@ struct EmailTextField: View {
     @Binding var isEmailCorrect: Bool
     @FocusState var focusedField: FocusedField?
     
-    @State private var fieldState: TextFieldState = .initial
+    @State private var fieldState: FieldState = .initial
     @State private var isEdited = false
     
     private let footerTextHeight: CGFloat = 16
