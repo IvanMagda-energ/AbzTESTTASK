@@ -69,6 +69,33 @@
         }
       }
     },
+    "failed.to.get.positions.error.description" : {
+      "comment" : "Failed to get positions error",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to get users."
+          }
+        }
+      }
+    },
+    "failed.to.get.positions.failure.reason %@" : {
+      "comment" : "Failed to get positions failure reason"
+    },
+    "failed.to.get.positions.help.anchor" : {
+      "comment" : "Help anchor when failed to get positions",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Try again"
+          }
+        }
+      }
+    },
     "failed.to.get.users.error.description" : {
       "comment" : "Failed to get users error",
       "extractionState" : "extracted_with_value",
@@ -118,6 +145,33 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Спробуйте знову"
+          }
+        }
+      }
+    },
+    "failed.to.sign.up.error.description" : {
+      "comment" : "Error description when failed to sign up user",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to sign up user."
+          }
+        }
+      }
+    },
+    "failed.to.sign.up.failure.reason %@" : {
+      "comment" : "Failure reason when failed to sign up user"
+    },
+    "failed.to.sign.up.help.anchor" : {
+      "comment" : "Help anchor when failed to sign up user",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Check that all required fields are correct and try again."
           }
         }
       }

@@ -17,7 +17,7 @@ struct CameraPickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode)
     private var presentationMode
     
-    @Binding var photo: UIImage?
+    @Binding var photoData: Data?
         
     func makeUIViewController(context: UIViewControllerRepresentableContext<CameraPickerView>) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
@@ -44,14 +44,34 @@ struct CameraPickerView: UIViewControllerRepresentable {
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                self.parent.photo = uiImage
+            guard let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else  {
+                parent.logger.error("Failed to capture photo from camera")
                 
-                parent.logger.info("Photo from camera picker successfully captured")
-                
+                // Dismiss camera picker
                 parent.presentationMode.wrappedValue.dismiss()
+                return
             }
+            
+            // Convert captured image from camera to data with default compressing quality
+            guard let data = uiImage.convertToData() else {
+                parent.logger.error("Failed to convert capture photo to data")
+                
+                // Dismiss camera picker
+                parent.presentationMode.wrappedValue.dismiss()
+                return
+            }
+            
+            self.parent.photoData = data
+            parent.logger.info("Photo from camera picker successfully captured and converted to data")
+            // Dismiss camera picker
+            parent.presentationMode.wrappedValue.dismiss()
         }
     }
 }
+
+
+
+
+
+
 

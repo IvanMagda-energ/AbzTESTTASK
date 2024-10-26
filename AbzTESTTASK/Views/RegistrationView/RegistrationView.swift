@@ -10,14 +10,18 @@ import SwiftUI
 struct RegistrationView: View {
     @State private var viewModel = RegistrationViewModel()
     @FocusState private var focusedField: FocusedField?
-    @State private var username = ""
+    @State private var name = ""
     @State private var email = ""
     @State private var phone = ""
     @State private var isEmailCorrect = false
     @State private var isPhoneCorrect = false
     @State private var selectedPosition: Position?
     @State private var isShowPhotoPickerMenu = false
-    @State private var image: UIImage?
+    @State private var imageData: Data?
+    
+    private var signUpButtonDisabled: Bool {
+        name.isEmpty || email.isEmpty || phone.isEmpty || !isEmailCorrect || !isPhoneCorrect || selectedPosition == nil || imageData == nil
+    }
     
     private let spacing: CGFloat = 16
     
@@ -28,7 +32,7 @@ struct RegistrationView: View {
             VStack (spacing: spacing) {
                 UserCredentialsSectionView(
                     focusedField: _focusedField,
-                    username: $username,
+                    username: $name,
                     email: $email,
                     phone: $phone,
                     isEmailCorrect: $isEmailCorrect,
@@ -43,18 +47,38 @@ struct RegistrationView: View {
                 )
                 .padding()
                 
-                UserPhotoSectionView(image: $image)
+                UserPhotoSectionView(imageData: $imageData)
                     .padding(.horizontal)
                 
-                Button(LocalizedKeys.signUpButton) {}
-                    .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
-                
+                Button(LocalizedKeys.signUpButton) {
+                    // If any optional fields are empty, the sign-up button should be disabled.
+                    // Therefore, a guard statement is used for unwrapping. In theory, the else block should not be executed.
+                    guard let selectedPosition, let imageData else {
+                        return
+                    }
+                    
+                    Task {
+                        await viewModel.signUp(
+                            UserInfo(
+                                name: name,
+                                email: email.lowercased(),
+                                phone: phone,
+                                positionId: selectedPosition.id,
+                                imageData: imageData
+                            )
+                        )
+                    }
+                }
+                .buttonStyle(PrimaryFilledButtonStyle(isDisabled: signUpButtonDisabled))
+                .disabled(signUpButtonDisabled)
             }
             .frame(maxHeight: .infinity, alignment: .top)
             .task { @MainActor in
                 await viewModel.getPositions()
             }
         }
+        .animation(.default, value: viewModel.isLoading)
+        .scrollDismissesKeyboard(.interactively)
         .overlay {
             if viewModel.isLoading {
                 ZStack {
@@ -64,7 +88,22 @@ struct RegistrationView: View {
                 .ignoresSafeArea()
             }
         }
-        .animation(.default, value: viewModel.isLoading)
+        .alert(
+            isPresented: $viewModel.hasError,
+            error: viewModel.error
+        ) { error in
+            if let recoverySuggestion = error.recoverySuggestion {
+                Button(recoverySuggestion, role: .cancel) {}
+            } else {
+                Button(LocalizedKeys.okButton, role: .cancel) {}
+            }
+        } message: { error in
+            if let failureReason = error.failureReason {
+                Text(failureReason + "\n" + (error.helpAnchor ?? ""))
+            } else {
+                Text(LocalizedKeys.unknownError, comment: "Unknown error")
+            }
+        }
     }
 }
 
@@ -76,5 +115,7 @@ extension RegistrationView {
     enum LocalizedKeys {
         static let headerText: LocalizedStringKey = "authorisation.view.header.text"
         static let signUpButton: LocalizedStringKey = "signup.button"
+        static let okButton: LocalizedStringKey = "ok.button"
+        static let unknownError: LocalizedStringKey = "unknown.error"
     }
 }

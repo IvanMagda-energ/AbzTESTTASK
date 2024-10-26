@@ -34,6 +34,7 @@ struct PhoneTextField: View {
                 TextField("", text: $phone, prompt: placeholder)
                     .focused($focusedField, equals: .phone)
                     .padding(.horizontal)
+                    .keyboardType(.phonePad)
             }
             .frame(height: textFieldHeight)
             .overlay {

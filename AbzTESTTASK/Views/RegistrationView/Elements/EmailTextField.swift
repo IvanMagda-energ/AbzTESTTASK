@@ -35,6 +35,7 @@ struct EmailTextField: View {
                 TextField("", text: $email, prompt: placeholder)
                     .focused($focusedField, equals: .email)
                     .padding(.horizontal)
+                    .textInputAutocapitalization(.never)
                     .onSubmit {
                         focusedField = .phone
                     }

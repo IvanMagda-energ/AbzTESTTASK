@@ -14,8 +14,10 @@ struct UserPhotoSectionView: View {
     private let cornerRadius: CGFloat = 4
     private let borderWidth: CGFloat = 2
     private let imageSize: CGFloat = 150
+    private let pickerPresentationHeight: CGFloat = 228
+    private let pickerCornerRadius: CGFloat = 28
     
-    @Binding var image: UIImage?
+    @Binding var imageData: Data?
     
     @State private var fieldState: FieldState = .initial
     @State private var isShowPhotoPickerMenuView = false
@@ -27,8 +29,8 @@ struct UserPhotoSectionView: View {
     var body: some View {
         VStack {
             Group {
-                if let image = image {
-                    Image(uiImage: image)
+                if let imageData, let uiImage = UIImage(data: imageData) {
+                    Image(uiImage: uiImage)
                         .resizable()
                 } else {
                     Image("UserPlaceholderImage")
@@ -87,27 +89,27 @@ struct UserPhotoSectionView: View {
             sourceType = .none
         } content: {
             PhotoPickerMenuView(sourceType: $sourceType)
-            .presentationDetents([.height(228)])
-            .presentationDragIndicator(.visible)
-            .presentationCornerRadius(28)
+                .presentationDetents([.height(pickerPresentationHeight)])
+                .presentationDragIndicator(.visible)
+                .presentationCornerRadius(pickerCornerRadius)
         }
         .fullScreenCover(isPresented: $isShowCameraPicker) {
             // OnDismiss
             self.checkFieldState()
         } content: {
-            CameraPickerView(photo: $image)
+            CameraPickerView(photoData: $imageData)
                 .ignoresSafeArea()
         }
         .sheet(isPresented: $isShowGalleryPicker) {
             // OnDismiss
             self.checkFieldState()
         } content: {
-            GalleryPickerView(image: $image)
+            GalleryPickerView(imageData: $imageData)
         }
     }
     
     private func checkFieldState() {
-        guard nil == image else {
+        guard nil == imageData else {
             self.fieldState = .initial
             return
         }
@@ -116,7 +118,7 @@ struct UserPhotoSectionView: View {
 }
 
 #Preview {
-    UserPhotoSectionView(image: .constant(nil))
+    UserPhotoSectionView(imageData: .constant(nil))
 }
 
 extension UserPhotoSectionView {
