@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "authorisation.tab.item.title" : {
       "localizations" : {
@@ -49,6 +56,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Камера"
+          }
+        }
+      }
+    },
+    "credential.already.registered.view.text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That email is already registered"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ця електронна адреса вже зареєстрована"
           }
         }
       }
@@ -245,6 +268,22 @@
         }
       }
     },
+    "got.it.button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зрозуміло"
+          }
+        }
+      }
+    },
     "invalid.email.format" : {
       "localizations" : {
         "en" : {
@@ -433,6 +472,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Зареєструватись"
+          }
+        }
+      }
+    },
+    "successful.signUp.view.text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User successfully registered"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Користувач успішно зареєстрований"
           }
         }
       }
