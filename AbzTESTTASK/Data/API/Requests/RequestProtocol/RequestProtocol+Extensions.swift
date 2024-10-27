@@ -20,6 +20,10 @@ extension RequestProtocol {
         return [:]
     }
     
+    var multipartFormRequest: MultipartRequest? {
+        return nil
+    }
+    
     var urlParams: [String: String?] {
         [:]
     }
@@ -28,8 +32,10 @@ extension RequestProtocol {
         [:]
     }
     
-    /// This method constructs a `URLRequest` using the host, path, HTTP method, headers, and any
-    /// parameters defined in the conforming type. It also adds an authorization token to the request
+    /// Constructs a `URLRequest` configured with the host, path, HTTP method, headers, parameters, and
+    /// additional components defined by the conforming type. If `addAuthorisationToken` is true,
+    /// it includes an authorization token in the request header. The request is adapted to handle
+    /// either `JSON` or `multipart/form-data` as specified by the conforming type.
     /// if `addAuthorisationToken` is true.
     /// - Parameter authToken: A `String` representing the authorization token to be included in the request header.
     /// - Returns: A `URLRequest` configured with the specified parameters.
@@ -55,10 +61,13 @@ extension RequestProtocol {
         }
         
         if addAuthorisationToken {
-            urlRequest.setValue(authToken, forHTTPHeaderField: "Authorization")
+            urlRequest.setValue(authToken, forHTTPHeaderField: "Token")
         }
         
-        if !params.isEmpty {
+        if let multipartFormRequest {
+            urlRequest.setValue(multipartFormRequest.httpContentTypeHeadeValue, forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = multipartFormRequest.httpBody
+        } else if !params.isEmpty {
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params)
         }
         

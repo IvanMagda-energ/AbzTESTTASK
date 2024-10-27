@@ -59,8 +59,8 @@ final class UsersViewModel {
             // We are adding a small delay of 1 second.
             try await Task.sleep(for: .seconds(1))
             
-            let request = UsersRequest.getUsers(page: page, count: 6)
-            let result: UserListResponse = try await requestManager.initRequest(with: request)
+            let request = UsersRequests.getUsers(page: page, count: 6)
+            let result: UsersResponse = try await requestManager.initRequest(with: request)
             users.append(contentsOf: result.users)
             
             if page < result.totalPages {

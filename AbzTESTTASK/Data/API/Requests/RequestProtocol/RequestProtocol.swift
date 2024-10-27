@@ -22,4 +22,8 @@ protocol RequestProtocol {
     var urlParams: [String: String?] { get }
     /// A `Bool` indicating whether the request should include an authorization token. This can be used to enforce token-based authentication.
     var addAuthorisationToken: Bool { get }
+    /// An optional `MultipartRequest` for requests requiring `multipart/form-data` encoding.
+    /// - This property contains the `MultipartRequest` instance used to handle multipart data, such as file uploads.
+    /// - If non-nil, the request will use this data for its HTTP body and set the `Content-Type` header accordingly.
+    var multipartFormRequest: MultipartRequest? { get }
 }

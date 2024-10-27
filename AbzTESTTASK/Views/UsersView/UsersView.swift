@@ -15,7 +15,11 @@ struct UsersView: View {
             HeaderTextView(text: LocalizedKeys.headerText)
             
             if viewModel.users.isEmpty {
-                NoUsersView()
+                ZStack {
+                    NoUsersView()
+                    Color.black.opacity(0.3)
+                    ProgressView()
+                }
             } else {
                 UsersListView(viewModel: viewModel)
             }
