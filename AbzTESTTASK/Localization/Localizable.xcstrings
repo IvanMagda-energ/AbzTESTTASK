@@ -76,13 +76,33 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Failed to get users."
+            "value" : "Failed to get positions."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалось отримати позиції"
           }
         }
       }
     },
     "failed.to.get.positions.failure.reason %@" : {
-      "comment" : "Failed to get positions failure reason"
+      "comment" : "Failed to get positions failure reason",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problem occurred with getting positions. Error: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виникла проблема з отриманням позиції. Помилка: %@"
+          }
+        }
+      }
     },
     "failed.to.get.positions.help.anchor" : {
       "comment" : "Help anchor when failed to get positions",
@@ -92,6 +112,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Try again"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробуйте знову"
           }
         }
       }
@@ -158,11 +184,31 @@
             "state" : "new",
             "value" : "Failed to sign up user."
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалось зареєструвати користувача"
+          }
         }
       }
     },
     "failed.to.sign.up.failure.reason %@" : {
-      "comment" : "Failure reason when failed to sign up user"
+      "comment" : "Failure reason when failed to sign up user",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problem occurred with sigh up. Error: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виникла проблема з реєстрацією користувача. Помилка: %@"
+          }
+        }
+      }
     },
     "failed.to.sign.up.help.anchor" : {
       "comment" : "Help anchor when failed to sign up user",
@@ -172,6 +218,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Check that all required fields are correct and try again."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перевірте чи всі необхідні поля заповнені коректно та спробуйте знову"
           }
         }
       }

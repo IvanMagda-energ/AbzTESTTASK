@@ -85,7 +85,7 @@ extension RegistrationViewModel {
             case .failedToGetPositions:
                 return NSLocalizedString(
                     "failed.to.get.positions.error.description",
-                    value: "Failed to get users.",
+                    value: "Failed to get positions.",
                     comment: "Failed to get positions error"
                 )
             case .failedSignUp:
