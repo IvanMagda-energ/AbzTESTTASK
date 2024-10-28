@@ -104,7 +104,7 @@ struct EmailTextField: View {
 
 #Preview {
     EmailTextField(email: .constant(""), isEmailCorrect: .constant(true))
-    EmailTextField(email: .constant("test@Mail.com"), isEmailCorrect: .constant(true))
+    EmailTextField(email: .constant(MockUserData.userOne.email), isEmailCorrect: .constant(true))
 }
 
 extension EmailTextField {

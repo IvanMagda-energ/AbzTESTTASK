@@ -10,6 +10,8 @@ import SwiftUI
 struct UsersView: View {
     @State var viewModel = UsersViewModel()
     
+    private let opacity: CGFloat = 0.3
+    
     var body: some View {
         VStack(spacing: 0) {
             HeaderTextView(text: LocalizedKeys.headerText)
@@ -17,7 +19,7 @@ struct UsersView: View {
             if viewModel.users.isEmpty {
                 ZStack {
                     NoUsersView()
-                    Color.black.opacity(0.3)
+                    Color.black.opacity(opacity)
                     ProgressView()
                 }
             } else {

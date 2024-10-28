@@ -29,7 +29,7 @@ final class SignUpViewModel {
     /// - Parameter requestManager: An object conforming to `RequestManagerProtocol`
     ///   used for handling API requests. If no manager is provided, a default instance
     ///   of `RequestManager` will be used.
-    init(requestManager: RequestManagerProtocol = RequestManager()) {
+    init(requestManager: RequestManagerProtocol = RequestManager.createManager()) {
         self.requestManager = requestManager
     }
     

@@ -8,8 +8,31 @@
 import Foundation
 
 enum MockUserData {
+    static let userResponse = UsersResponse(
+        success: true,
+        totalPages: 1,
+        totalUsers: users.count,
+        count: users.count,
+        page: 1,
+        links: [:],
+        users: users
+    )
+    
+    static let positionsResponse = PositionsResponse(
+        success: true,
+        positions: positions
+    )
+    
+    static let signUpResponse = SignUpResponse(
+        success: true,
+        userId: 1234,
+        message: "Successful sign up user"
+    )
+    
     static let users = [userOne, userTwo, userThree, userFour, userFive]
+    
     static let positions = [positionOne, positionTwo, positionThree, positionFour, positionFive]
+    
     static let userOne = User(
         id: 1,
         name: "Jimmy Page",

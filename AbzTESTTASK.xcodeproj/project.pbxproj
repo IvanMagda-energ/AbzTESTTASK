@@ -36,6 +36,7 @@
 		CE6E58C72CCE60610070F860 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58C62CCE60610070F860 /* ResponseError.swift */; };
 		CE6E58C92CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58C82CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift */; };
 		CE6E58CB2CCFAD790070F860 /* UserViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */; };
+		CE6E58CE2CCFC9DF0070F860 /* MockRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58CD2CCFC9DF0070F860 /* MockRequestManager.swift */; };
 		CEC5DE7D2CB5535100F5EB4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */; };
 		CEC5DE7E2CB5535100F5EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE782CB5535100F5EB4C /* Assets.xcassets */; };
 		CEC5DE802CB5535100F5EB4C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE7B2CB5535100F5EB4C /* Localizable.xcstrings */; };
@@ -103,6 +104,7 @@
 		CE6E58C62CCE60610070F860 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		CE6E58C82CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserViewModel+Extensions.swift"; sourceTree = "<group>"; };
+		CE6E58CD2CCFC9DF0070F860 /* MockRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestManager.swift; sourceTree = "<group>"; };
 		CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC5DE502CB5535100F5EB4C /* ReguestManager.swift */,
+				CE6E58CD2CCFC9DF0070F860 /* MockRequestManager.swift */,
 				CEC5DE512CB5535100F5EB4C /* ReguestManagerProtocol.swift */,
 				CEC5DE522CB5535100F5EB4C /* RequestManager+Extensions.swift */,
 			);
@@ -650,6 +653,7 @@
 				CE5F96462CC03AC4007E6F3C /* PositionsResponse.swift in Sources */,
 				CEC5DEB02CB57F9500F5EB4C /* AuthTokenRequest.swift in Sources */,
 				CEC5DE8B2CB5535100F5EB4C /* RequestProtocol.swift in Sources */,
+				CE6E58CE2CCFC9DF0070F860 /* MockRequestManager.swift in Sources */,
 				CEC5DE8C2CB5535100F5EB4C /* RequestProtocol+Extensions.swift in Sources */,
 				CE5F96652CC55B15007E6F3C /* SourceType.swift in Sources */,
 				CE6E58BB2CCC2E2A0070F860 /* MultipartRequest.swift in Sources */,

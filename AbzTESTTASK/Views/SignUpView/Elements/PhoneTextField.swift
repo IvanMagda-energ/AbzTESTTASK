@@ -102,7 +102,7 @@ struct PhoneTextField: View {
 
 #Preview {
     PhoneTextField(phone: .constant(""), isPhoneCorrect: .constant(true))
-    PhoneTextField(phone: .constant("+380681111111"), isPhoneCorrect: .constant(true))
+    PhoneTextField(phone: .constant(MockUserData.userOne.phone), isPhoneCorrect: .constant(true))
 }
 
 extension PhoneTextField {
