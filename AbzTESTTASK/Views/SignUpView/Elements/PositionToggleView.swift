@@ -20,7 +20,7 @@ struct PositionToggleView: View {
                         selectedPosition = position
                     }
                 }
-                .onChange(of: selectedPosition) { oldValue, newValue in
+                .onChange(of: selectedPosition) { _, newValue in
                     guard newValue == position else {
                         isOn = false
                         return

@@ -113,4 +113,3 @@ extension PhoneTextField {
         static let phoneFormatExample: String = "+38 (XXX) XXX - XX - XX"
     }
 }
-

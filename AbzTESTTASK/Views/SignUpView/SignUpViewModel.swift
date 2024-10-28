@@ -24,8 +24,11 @@ final class SignUpViewModel {
     
     private let requestManager: RequestManagerProtocol
     
-    /// <#Description#>
-    /// - Parameter requestManager: <#requestManager description#>
+    /// Initializes a new instance of `SignUpViewModel` with a specified request manager.
+    ///
+    /// - Parameter requestManager: An object conforming to `RequestManagerProtocol`
+    ///   used for handling API requests. If no manager is provided, a default instance
+    ///   of `RequestManager` will be used.
     init(requestManager: RequestManagerProtocol = RequestManager()) {
         self.requestManager = requestManager
     }
@@ -105,9 +108,9 @@ final class SignUpViewModel {
                 var fails: String {
                     String(describing: error.fails?.name?.first) + "/n" +
                     String(describing: error.fails?.email?.first) + "/n" +
-                    String(describing:error.fails?.phone?.first) + "/n" +
-                    String(describing:error.fails?.position_id?.first) + "/n" +
-                    String(describing:error.fails?.photo?.first)
+                    String(describing: error.fails?.phone?.first) + "/n" +
+                    String(describing: error.fails?.positionId?.first) + "/n" +
+                    String(describing: error.fails?.photo?.first)
                 }
                 self.logger.error("\(#function) \(error.message) \(fails)")
             default:

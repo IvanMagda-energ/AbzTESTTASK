@@ -12,10 +12,10 @@ enum SignUpResult {
     case failure
 }
 
-// Conforming to hashable
+// MARK: - Conforming to hashable
 extension SignUpResult: Hashable {}
 
-// Conforming to identifiable
+// MARK: - Conforming to identifiable
 extension SignUpResult: Identifiable {
     var id: UUID { UUID() }
 }

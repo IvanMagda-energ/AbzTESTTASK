@@ -30,7 +30,7 @@ struct SignUpView: View {
         HeaderTextView(text: LocalizedKeys.headerText)
         
         ScrollView {
-            VStack (spacing: spacing) {
+            VStack(spacing: spacing) {
                 UserCredentialsSectionView(
                     focusedField: _focusedField,
                     username: $name,

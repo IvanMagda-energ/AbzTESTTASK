@@ -12,13 +12,12 @@ struct ResponseError: Decodable {
     let success: Bool
     let message: String
     let fails: Fails?
-    
     // MARK: - Fails
     struct Fails: Decodable {
         let name: [String]?
         let email: [String]?
         let phone: [String]?
-        let position_id: [String]?
+        let positionId: [String]?
         let photo: [String]?
         let count: [String]?
         let page: [String]?
