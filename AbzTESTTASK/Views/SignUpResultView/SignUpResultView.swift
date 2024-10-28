@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpResultView: View {
     @Environment(\.dismiss) var dismiss
     let signUpResult: SignUpResult
+    let onDismiss: () -> Void
     
     private let imageMaxSize: CGFloat = 200
     private let spacing: CGFloat = 24
@@ -33,6 +34,7 @@ struct SignUpResultView: View {
                     
                     Button(LocalizedKeys.gotIt) {
                         dismiss()
+                        onDismiss()
                     }
                     .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
                     
@@ -68,7 +70,7 @@ struct SignUpResultView: View {
 #Preview {
     Color.clear
         .sheet(isPresented: .constant(true)) {
-            SignUpResultView(signUpResult: .success)
+            SignUpResultView(signUpResult: .success) {}
         }
 }
 

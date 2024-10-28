@@ -43,10 +43,10 @@ class RequestManager: RequestManagerProtocol {
 
 extension RequestManager {
     static func createManager() -> RequestManagerProtocol {
-#if DEBUG
-        return MockRequestManager()
-#else
-        return self
-#endif
+        if ProcessInfo.isOnPreview() {
+            return MockRequestManager()
+        } else {
+            return RequestManager()
+        }
     }
 }

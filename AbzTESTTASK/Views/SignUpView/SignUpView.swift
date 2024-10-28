@@ -90,7 +90,12 @@ struct SignUpView: View {
             }
         }
         .sheet(item: $viewModel.signUpResult) { result in
-            SignUpResultView(signUpResult: result)
+            SignUpResultView(signUpResult: result) {
+                name = ""
+                email = ""
+                phone = ""
+                imageData = nil
+            }
         }
         .alert(
             isPresented: $viewModel.hasError,
