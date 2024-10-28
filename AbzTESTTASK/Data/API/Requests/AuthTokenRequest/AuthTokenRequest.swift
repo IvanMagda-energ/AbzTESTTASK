@@ -12,7 +12,7 @@ enum AuthTokenRequest: RequestProtocol {
     /// Retrieves an authentication token from the API.
     case auth
     
-    ///The API endpoint path for position-related requests.
+    /// The API endpoint path for position-related requests.
     var path: String {
         "/api/v1/token"
     }

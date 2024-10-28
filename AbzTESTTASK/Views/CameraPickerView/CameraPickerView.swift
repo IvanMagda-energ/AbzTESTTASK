@@ -44,7 +44,7 @@ struct CameraPickerView: UIViewControllerRepresentable {
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            guard let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else  {
+            guard let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
                 parent.logger.error("Failed to capture photo from camera")
                 
                 // Dismiss camera picker
@@ -68,10 +68,3 @@ struct CameraPickerView: UIViewControllerRepresentable {
         }
     }
 }
-
-
-
-
-
-
-

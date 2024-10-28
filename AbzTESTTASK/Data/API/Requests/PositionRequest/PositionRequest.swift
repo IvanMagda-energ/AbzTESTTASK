@@ -12,7 +12,7 @@ enum PositionRequest: RequestProtocol {
     /// Retrieves a list of user positions from the API.
     case getPositions
     
-    ///The API endpoint path for position-related requests.
+    /// The API endpoint path for position-related requests.
     var path: String {
         return "/api/v1/positions"
     }
@@ -27,4 +27,3 @@ enum PositionRequest: RequestProtocol {
         .GET
     }
 }
-

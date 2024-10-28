@@ -51,7 +51,7 @@ struct NameTextField: View {
                     .stroke(fieldState.fieldColor, lineWidth: borderWidth)
                     .foregroundStyle(Color.clear)
             }
-            .onChange(of: focusedField) { oldValue, newValue in
+            .onChange(of: focusedField) { _, _ in
                 checkFieldState()
             }
             HStack {

@@ -14,7 +14,7 @@ struct PositionsResponse: Decodable {
 }
 
 // MARK: - Position
-struct Position: Codable, Identifiable{
+struct Position: Codable, Identifiable {
     let id: Int
     let name: String
 }

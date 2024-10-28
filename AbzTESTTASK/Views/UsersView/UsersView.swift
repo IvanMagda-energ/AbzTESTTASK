@@ -11,7 +11,7 @@ struct UsersView: View {
     @State var viewModel = UsersViewModel()
     
     var body: some View {
-        VStack (spacing: 0) {
+        VStack(spacing: 0) {
             HeaderTextView(text: LocalizedKeys.headerText)
             
             if viewModel.users.isEmpty {
@@ -58,5 +58,3 @@ extension UsersView {
         static let unknownError: LocalizedStringKey = "unknown.error"
     }
 }
-
-

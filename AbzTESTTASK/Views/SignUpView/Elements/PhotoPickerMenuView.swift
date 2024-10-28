@@ -37,7 +37,6 @@ struct PhotoPickerMenuView: View {
                 }
                 .frame(maxWidth: .infinity)
                 
-                
                 // MARK: - Gallery picker
                 Button {
                     sourceType = .photoLibrary

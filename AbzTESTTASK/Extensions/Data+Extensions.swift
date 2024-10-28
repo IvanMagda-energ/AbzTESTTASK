@@ -8,7 +8,6 @@
 import Foundation
 
 extension Data {
-    
     /// Appends a UTF-8 encoded string to the current data object.
     ///
     /// Converts the provided string to UTF-8 encoded `Data` and appends it to the existing data within the instance.

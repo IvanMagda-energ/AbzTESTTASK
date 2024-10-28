@@ -17,7 +17,7 @@ protocol RequestProtocol {
     /// A dictionary of HTTP headers to be included in the request. This can contain any required headers for authentication or content type.
     var headers: [String: String] { get }
     /// A dictionary containing the parameters to be included in the body of the request. The values can be of any type, depending on the request.
-    var params: [String: Any]  { get }
+    var params: [String: Any] { get }
     /// A dictionary of URL parameters to be appended to the request URL. The keys are parameter names, and the values are optional strings.
     var urlParams: [String: String?] { get }
     /// A `Bool` indicating whether the request should include an authorization token. This can be used to enforce token-based authentication.

@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension UIImage {
-    
     /// Converts an image to `Data` by compressing it until it meets a specified maximum file size (in MB).
     ///
     /// This function gradually reduces the image's compression quality in steps until its data size fits within the given limit.

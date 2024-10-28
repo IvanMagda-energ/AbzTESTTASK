@@ -10,7 +10,7 @@ import Foundation
 enum MockUserData {
     static let users = [userOne, userTwo, userThree, userFour, userFive]
     static let positions = [positionOne, positionTwo, positionThree, positionFour, positionFive]
-    static let userOne: User = User(
+    static let userOne = User(
         id: 1,
         name: "Jimmy Page",
         email: "jpage@mail.com",
@@ -21,7 +21,7 @@ enum MockUserData {
         photo: "jpage_photo.jpg"
     )
 
-    static let userTwo: User = User(
+    static let userTwo = User(
         id: 2,
         name: "Freddie Mercury",
         email: "fmercury@mail.com",
@@ -32,7 +32,7 @@ enum MockUserData {
         photo: "fmercury_photo.jpg"
     )
 
-    static let userThree: User = User(
+    static let userThree = User(
         id: 3,
         name: "Kurt Cobain",
         email: "kcobain@mail.com",
@@ -43,7 +43,7 @@ enum MockUserData {
         photo: "kcobain_photo.jpg"
     )
 
-    static let userFour: User = User(
+    static let userFour = User(
         id: 4,
         name: "David Bowie",
         email: "dbowie@mail.com",
@@ -54,7 +54,7 @@ enum MockUserData {
         photo: "dbowie_photo.jpg"
     )
 
-    static let userFive: User = User(
+    static let userFive = User(
         id: 5,
         name: "Joan Jett",
         email: "jjett@mail.com",
@@ -65,27 +65,27 @@ enum MockUserData {
         photo: "jjett_photo.jpg"
     )
     
-    static let positionOne: Position = Position(
+    static let positionOne = Position(
         id: 1,
         name: "Lead Guitarist"
     )
 
-    static let positionTwo: Position = Position(
+    static let positionTwo = Position(
         id: 2,
         name: "Vocalist"
     )
 
-    static let positionThree: Position = Position(
+    static let positionThree = Position(
         id: 3,
         name: "Rhythm Guitarist"
     )
 
-    static let positionFour: Position = Position(
+    static let positionFour = Position(
         id: 4,
         name: "Singer-Songwriter"
     )
 
-    static let positionFive: Position = Position(
+    static let positionFive = Position(
         id: 5,
         name: "Guitarist & Vocalist"
     )
