@@ -64,16 +64,5 @@ struct UserListRowView: View {
 }
 
 #Preview {
-    UserListRowView(
-        user: User(
-            id: 1,
-            name: "Angel",
-            email: "angel.williams@example.com",
-            phone: "+380496540023",
-            position: "Designer",
-            positionId: 4,
-            registrationTimestamp: 1537777441,
-            photo: "https://frontend-test-assignment-api.abz.agency/images/users/5b977ba13fb3330.jpeg"
-        )
-    )
+    UserListRowView(user: MockUserData.userOne)
 }

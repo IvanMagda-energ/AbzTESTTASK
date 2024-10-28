@@ -33,9 +33,9 @@ struct PositionToggleView: View {
 }
 
 #Preview {
-    let position = Position(id: 1, name: "Developer")
+    let position = MockUserData.positionOne
     PositionToggleView(
-        position: position,
+        position: MockUserData.positionOne,
         selectedPosition: .constant(position)
     )
 }

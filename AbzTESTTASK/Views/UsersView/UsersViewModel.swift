@@ -25,7 +25,7 @@ final class UsersViewModel {
     
     private let requestManager: RequestManagerProtocol
         
-    init(requestManager: RequestManagerProtocol = RequestManager()) {
+    init(requestManager: RequestManagerProtocol = RequestManager.createManager()) {
         self.requestManager = requestManager
     }
     

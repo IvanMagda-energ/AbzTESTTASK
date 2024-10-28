@@ -40,3 +40,13 @@ class RequestManager: RequestManagerProtocol {
         return decoded
     }
 }
+
+extension RequestManager {
+    static func createManager() -> RequestManagerProtocol {
+#if DEBUG
+        return MockRequestManager()
+#else
+        return self
+#endif
+    }
+}

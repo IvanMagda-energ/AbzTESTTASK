@@ -91,7 +91,7 @@ struct NameTextField: View {
 #Preview {
     @Previewable @State var name = ""
     NameTextField(name: $name)
-    NameTextField(name: .constant("test@mail.com"))
+    NameTextField(name: .constant(MockUserData.userOne.name))
 }
 
 extension NameTextField {
