@@ -26,10 +26,16 @@
 		CE5F96632CC53378007E6F3C /* PhotoPickerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96622CC53378007E6F3C /* PhotoPickerMenuView.swift */; };
 		CE5F96652CC55B15007E6F3C /* SourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96642CC55B15007E6F3C /* SourceType.swift */; };
 		CE5F96672CC57A3B007E6F3C /* GalleryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96662CC57A3B007E6F3C /* GalleryPickerView.swift */; };
-		CE5F96702CC5B03F007E6F3C /* RegisterUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F966F2CC5B03F007E6F3C /* RegisterUserResponse.swift */; };
+		CE5F96702CC5B03F007E6F3C /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F966F2CC5B03F007E6F3C /* SignUpResponse.swift */; };
 		CE5F96762CC96A58007E6F3C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F96752CC96A58007E6F3C /* UIImage+Extensions.swift */; };
 		CE6E58B92CCC24D80070F860 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58B82CCC24D80070F860 /* Data+Extensions.swift */; };
 		CE6E58BB2CCC2E2A0070F860 /* MultipartRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58BA2CCC2E2A0070F860 /* MultipartRequest.swift */; };
+		CE6E58BF2CCE27B90070F860 /* SignUpResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58BE2CCE27B90070F860 /* SignUpResultView.swift */; };
+		CE6E58C12CCE28480070F860 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58C02CCE28480070F860 /* SignUpResult.swift */; };
+		CE6E58C52CCE57300070F860 /* ApiManagerProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58C42CCE55EF0070F860 /* ApiManagerProtocol+Extensions.swift */; };
+		CE6E58C72CCE60610070F860 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58C62CCE60610070F860 /* ResponseError.swift */; };
+		CE6E58C92CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58C82CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift */; };
+		CE6E58CB2CCFAD790070F860 /* UserViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */; };
 		CEC5DE7D2CB5535100F5EB4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */; };
 		CEC5DE7E2CB5535100F5EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE782CB5535100F5EB4C /* Assets.xcassets */; };
 		CEC5DE802CB5535100F5EB4C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE7B2CB5535100F5EB4C /* Localizable.xcstrings */; };
@@ -47,8 +53,8 @@
 		CEC5DE8C2CB5535100F5EB4C /* RequestProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE5B2CB5535100F5EB4C /* RequestProtocol+Extensions.swift */; };
 		CEC5DE8D2CB5535100F5EB4C /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE5E2CB5535100F5EB4C /* RequestType.swift */; };
 		CEC5DE8E2CB5535100F5EB4C /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE602CB5535100F5EB4C /* ApiConstants.swift */; };
-		CEC5DE8F2CB5535100F5EB4C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE652CB5535100F5EB4C /* RegistrationView.swift */; };
-		CEC5DE902CB5535100F5EB4C /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE662CB5535100F5EB4C /* RegistrationViewModel.swift */; };
+		CEC5DE8F2CB5535100F5EB4C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE652CB5535100F5EB4C /* SignUpView.swift */; };
+		CEC5DE902CB5535100F5EB4C /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE662CB5535100F5EB4C /* SignUpViewModel.swift */; };
 		CEC5DE912CB5535100F5EB4C /* HeaderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE682CB5535100F5EB4C /* HeaderTextView.swift */; };
 		CEC5DE922CB5535100F5EB4C /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6A2CB5535100F5EB4C /* MainTabBarView.swift */; };
 		CEC5DE932CB5535100F5EB4C /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE6B2CB5535100F5EB4C /* TabBarItemView.swift */; };
@@ -87,10 +93,16 @@
 		CE5F96622CC53378007E6F3C /* PhotoPickerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerMenuView.swift; sourceTree = "<group>"; };
 		CE5F96642CC55B15007E6F3C /* SourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceType.swift; sourceTree = "<group>"; };
 		CE5F96662CC57A3B007E6F3C /* GalleryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPickerView.swift; sourceTree = "<group>"; };
-		CE5F966F2CC5B03F007E6F3C /* RegisterUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserResponse.swift; sourceTree = "<group>"; };
+		CE5F966F2CC5B03F007E6F3C /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		CE5F96752CC96A58007E6F3C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		CE6E58B82CCC24D80070F860 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		CE6E58BA2CCC2E2A0070F860 /* MultipartRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartRequest.swift; sourceTree = "<group>"; };
+		CE6E58BE2CCE27B90070F860 /* SignUpResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResultView.swift; sourceTree = "<group>"; };
+		CE6E58C02CCE28480070F860 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
+		CE6E58C42CCE55EF0070F860 /* ApiManagerProtocol+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiManagerProtocol+Extensions.swift"; sourceTree = "<group>"; };
+		CE6E58C62CCE60610070F860 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		CE6E58C82CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewModel+Extensions.swift"; sourceTree = "<group>"; };
+		CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
@@ -106,8 +118,8 @@
 		CEC5DE5E2CB5535100F5EB4C /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		CEC5DE602CB5535100F5EB4C /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CEC5DE652CB5535100F5EB4C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
-		CEC5DE662CB5535100F5EB4C /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		CEC5DE652CB5535100F5EB4C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		CEC5DE662CB5535100F5EB4C /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		CEC5DE682CB5535100F5EB4C /* HeaderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTextView.swift; sourceTree = "<group>"; };
 		CEC5DE6A2CB5535100F5EB4C /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		CEC5DE6B2CB5535100F5EB4C /* TabBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
@@ -176,6 +188,7 @@
 				CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */,
 				CEC5DEAC2CB57E0900F5EB4C /* APIToken.swift */,
 				CE5F96452CC03AC4007E6F3C /* PositionsResponse.swift */,
+				CE6E58C62CCE60610070F860 /* ResponseError.swift */,
 			);
 			path = GET;
 			sourceTree = "<group>";
@@ -184,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5F964E2CC3A7AE007E6F3C /* UserInfo.swift */,
-				CE5F966F2CC5B03F007E6F3C /* RegisterUserResponse.swift */,
+				CE5F966F2CC5B03F007E6F3C /* SignUpResponse.swift */,
 			);
 			path = POST;
 			sourceTree = "<group>";
@@ -232,11 +245,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE6E58BD2CCE26DF0070F860 /* SignUpResultView */ = {
+			isa = PBXGroup;
+			children = (
+				CE6E58BE2CCE27B90070F860 /* SignUpResultView.swift */,
+				CE6E58C02CCE28480070F860 /* SignUpResult.swift */,
+			);
+			path = SignUpResultView;
+			sourceTree = "<group>";
+		};
 		CEC5DE4F2CB5535100F5EB4C /* ApiManager */ = {
 			isa = PBXGroup;
 			children = (
 				CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */,
 				CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */,
+				CE6E58C42CCE55EF0070F860 /* ApiManagerProtocol+Extensions.swift */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -328,17 +351,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CEC5DE672CB5535100F5EB4C /* RegistrationView */ = {
+		CEC5DE672CB5535100F5EB4C /* SignUpView */ = {
 			isa = PBXGroup;
 			children = (
 				CE5F96332CBEE365007E6F3C /* Elements */,
-				CEC5DE652CB5535100F5EB4C /* RegistrationView.swift */,
+				CEC5DE652CB5535100F5EB4C /* SignUpView.swift */,
 				CE5F96552CC501E4007E6F3C /* UserCredentialsSectionView.swift */,
 				CE5F96572CC503FC007E6F3C /* UserPositionSectionView.swift */,
 				CE5F965C2CC51AEF007E6F3C /* UserPhotoSectionView.swift */,
-				CEC5DE662CB5535100F5EB4C /* RegistrationViewModel.swift */,
+				CEC5DE662CB5535100F5EB4C /* SignUpViewModel.swift */,
+				CE6E58C82CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift */,
 			);
-			path = RegistrationView;
+			path = SignUpView;
 			sourceTree = "<group>";
 		};
 		CEC5DE692CB5535100F5EB4C /* Elements */ = {
@@ -372,6 +396,7 @@
 			children = (
 				CEC5DE702CB5535100F5EB4C /* UsersView.swift */,
 				CEC5DE712CB5535100F5EB4C /* UsersViewModel.swift */,
+				CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */,
 				CEC5DEB82CB5CAC500F5EB4C /* NoUsersView.swift */,
 				CEC5DEBA2CB5CE0300F5EB4C /* UsersListView.swift */,
 				CEC5DEBC2CB5D6AD00F5EB4C /* UserListRowView.swift */,
@@ -384,9 +409,10 @@
 			children = (
 				CEC5DE772CB5535100F5EB4C /* AbzTESTTASKApp.swift */,
 				CEC5DE792CB5535100F5EB4C /* ContentView.swift */,
+				CE6E58BD2CCE26DF0070F860 /* SignUpResultView */,
 				CEC5DE6D2CB5535100F5EB4C /* MainTabBarView */,
 				CEC5DE722CB5535100F5EB4C /* UsersView */,
-				CEC5DE672CB5535100F5EB4C /* RegistrationView */,
+				CEC5DE672CB5535100F5EB4C /* SignUpView */,
 				CE5F96682CC57C66007E6F3C /* CameraPickerView */,
 				CE5F966B2CC57CB0007E6F3C /* GalleryPickerView */,
 				CEC5DE692CB5535100F5EB4C /* Elements */,
@@ -580,7 +606,9 @@
 				CEC5DE822CB5535100F5EB4C /* ApiManager.swift in Sources */,
 				CEC5DE832CB5535100F5EB4C /* ApiManagerProtocol.swift in Sources */,
 				CEC5DE842CB5535100F5EB4C /* ReguestManager.swift in Sources */,
+				CE6E58C12CCE28480070F860 /* SignUpResult.swift in Sources */,
 				CEC5DEB92CB5CAC500F5EB4C /* NoUsersView.swift in Sources */,
+				CE6E58CB2CCFAD790070F860 /* UserViewModel+Extensions.swift in Sources */,
 				CEC5DE852CB5535100F5EB4C /* ReguestManagerProtocol.swift in Sources */,
 				CEC5DE862CB5535100F5EB4C /* RequestManager+Extensions.swift in Sources */,
 				CE5F96492CC04332007E6F3C /* CheckToggleStyle.swift in Sources */,
@@ -589,24 +617,27 @@
 				CE5F96672CC57A3B007E6F3C /* GalleryPickerView.swift in Sources */,
 				CE5F964F2CC3A7AE007E6F3C /* UserInfo.swift in Sources */,
 				CEC5DE872CB5535100F5EB4C /* NetworkConnectionMonitor.swift in Sources */,
+				CE6E58C92CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift in Sources */,
 				CEC5DE882CB5535100F5EB4C /* NetworkError.swift in Sources */,
 				CEC5DE892CB5535100F5EB4C /* DataParser.swift in Sources */,
+				CE6E58C52CCE57300070F860 /* ApiManagerProtocol+Extensions.swift in Sources */,
 				CEC5DEAD2CB57E0900F5EB4C /* APIToken.swift in Sources */,
 				CEC5DE8A2CB5535100F5EB4C /* DataParserProtocol.swift in Sources */,
+				CE6E58C72CCE60610070F860 /* ResponseError.swift in Sources */,
 				CE5F96462CC03AC4007E6F3C /* PositionsResponse.swift in Sources */,
 				CEC5DEB02CB57F9500F5EB4C /* AuthTokenRequest.swift in Sources */,
 				CEC5DE8B2CB5535100F5EB4C /* RequestProtocol.swift in Sources */,
 				CEC5DE8C2CB5535100F5EB4C /* RequestProtocol+Extensions.swift in Sources */,
 				CE5F96652CC55B15007E6F3C /* SourceType.swift in Sources */,
 				CE6E58BB2CCC2E2A0070F860 /* MultipartRequest.swift in Sources */,
-				CE5F96702CC5B03F007E6F3C /* RegisterUserResponse.swift in Sources */,
+				CE5F96702CC5B03F007E6F3C /* SignUpResponse.swift in Sources */,
 				CE5F96532CC4DE61007E6F3C /* PositionToggleView.swift in Sources */,
 				CE5F96412CBFFC39007E6F3C /* Constants.swift in Sources */,
 				CE5F96442CC0384D007E6F3C /* PositionRequest.swift in Sources */,
 				CEC5DE8D2CB5535100F5EB4C /* RequestType.swift in Sources */,
 				CEC5DE8E2CB5535100F5EB4C /* ApiConstants.swift in Sources */,
-				CEC5DE8F2CB5535100F5EB4C /* RegistrationView.swift in Sources */,
-				CEC5DE902CB5535100F5EB4C /* RegistrationViewModel.swift in Sources */,
+				CEC5DE8F2CB5535100F5EB4C /* SignUpView.swift in Sources */,
+				CEC5DE902CB5535100F5EB4C /* SignUpViewModel.swift in Sources */,
 				CEC5DE912CB5535100F5EB4C /* HeaderTextView.swift in Sources */,
 				CEC5DE922CB5535100F5EB4C /* MainTabBarView.swift in Sources */,
 				CE5F963F2CBFBD9A007E6F3C /* FieldState.swift in Sources */,
@@ -619,6 +650,7 @@
 				CEC5DE952CB5535100F5EB4C /* NoConnectionView.swift in Sources */,
 				CEC5DE962CB5535100F5EB4C /* UsersView.swift in Sources */,
 				CEC5DE972CB5535100F5EB4C /* UsersViewModel.swift in Sources */,
+				CE6E58BF2CCE27B90070F860 /* SignUpResultView.swift in Sources */,
 				CE5F96632CC53378007E6F3C /* PhotoPickerMenuView.swift in Sources */,
 				CE5F96762CC96A58007E6F3C /* UIImage+Extensions.swift in Sources */,
 				CEC5DE982CB5535100F5EB4C /* PrimaryFilledButtonStyle.swift in Sources */,

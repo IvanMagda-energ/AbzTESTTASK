@@ -1,5 +1,5 @@
 //
-//  RegisterUserResponse.swift
+//  SignUpResponse.swift
 //  AbzTESTTASK
 //
 //  Created by Ivan Magda on 21.10.2024.

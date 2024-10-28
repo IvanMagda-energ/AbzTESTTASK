@@ -25,7 +25,7 @@ extension UIImage {
         let maxFileSizeBytes = maxFileSizeMB * 1024 * 1024
         
         // If the initial data meets the file size requirement, return it immediately
-        if imageData.count >= maxFileSizeBytes {
+        if imageData.count <= maxFileSizeBytes {
             return imageData
         }
         

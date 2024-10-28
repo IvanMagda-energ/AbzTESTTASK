@@ -7,18 +7,19 @@
 
 import Foundation
 
-/// This enum conforms to the `RequestProtocol` and defines the necessary components for making requests
-/// to fetch user data or register a new user via the API.
+/// An enum that defines requests for user-related actions, conforming to `RequestProtocol`.
 enum UsersRequests: RequestProtocol {
+    /// Fetches a paginated list of users with the specified page as `Int` and count as `Int`.
     case getUsers(page: Int, count: Int)
+    /// Registers a new user with the given user information as `UserInfo`.
     case signUp(_ userInfo: UserInfo)
-        
-    /// The API endpoint path for all user-related requests as `String`.
+    
+    /// The API endpoint path for user-related requests.
     var path: String {
         return "/api/v1/users"
     }
     
-    /// Indicates whether an authorization token is required for the request as `Bool`.
+    /// Whether the request requires an authorization token.
     var addAuthorisationToken: Bool {
         switch self {
         case .getUsers:
@@ -28,7 +29,7 @@ enum UsersRequests: RequestProtocol {
         }
     }
     
-    /// The HTTP method to be used for the request as `RequestType`.
+    /// HTTP method for the request.
     var requestType: RequestType {
         switch self {
         case .getUsers:
@@ -38,7 +39,7 @@ enum UsersRequests: RequestProtocol {
         }
     }
     
-    /// Headers to be included in the request as `[String: String]`
+    /// Request headers.
     var headers: [String : String] {
         switch self {
         case .getUsers:
@@ -50,7 +51,7 @@ enum UsersRequests: RequestProtocol {
         }
     }
     
-    /// URL parameters to be included in the request as `[String: String]`.
+    /// URL parameters for the request.
     var urlParams: [String : String?] {
         switch self {
         case .getUsers(let page, let count):
@@ -63,6 +64,7 @@ enum UsersRequests: RequestProtocol {
         }
     }
     
+    /// Configures multipart form data for `signUp` with user information.
     var multipartFormRequest: MultipartRequest? {
         switch self {
         case .signUp(let userInfo):

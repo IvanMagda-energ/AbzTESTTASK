@@ -1,5 +1,5 @@
 //
-//  RegistrationView.swift
+//  SignUpView.swift
 //  AbzTESTTASK
 //
 //  Created by Ivan Magda on 07.10.2024.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct RegistrationView: View {
-    @State private var viewModel = RegistrationViewModel()
+struct SignUpView: View {
+    @State private var viewModel = SignUpViewModel()
     @FocusState private var focusedField: FocusedField?
     @State private var name = ""
     @State private var email = ""
@@ -24,6 +24,7 @@ struct RegistrationView: View {
     }
     
     private let spacing: CGFloat = 16
+    private let opacity: CGFloat = 0.3
     
     var body: some View {
         HeaderTextView(text: LocalizedKeys.headerText)
@@ -82,11 +83,14 @@ struct RegistrationView: View {
         .overlay {
             if viewModel.isLoading {
                 ZStack {
-                    Color.black.opacity(0.3)
+                    Color.black.opacity(opacity)
                     ProgressView()
                 }
                 .ignoresSafeArea()
             }
+        }
+        .sheet(item: $viewModel.signUpResult) { result in
+            SignUpResultView(signUpResult: result)
         }
         .alert(
             isPresented: $viewModel.hasError,
@@ -108,10 +112,10 @@ struct RegistrationView: View {
 }
 
 #Preview {
-    RegistrationView()
+    SignUpView()
 }
 
-extension RegistrationView {
+extension SignUpView {
     enum LocalizedKeys {
         static let headerText: LocalizedStringKey = "authorisation.view.header.text"
         static let signUpButton: LocalizedStringKey = "signup.button"
