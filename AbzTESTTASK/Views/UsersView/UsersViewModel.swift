@@ -70,50 +70,20 @@ final class UsersViewModel {
                 logger.info("\(#function) All pages loaded. Total pages: \(result.totalPages).")
             }
         } catch {
-            self.error = ViewModelLocalizedError.failedToGetUsers(error)
+            // If the user cannot influence the occurrence of the error and cannot fix it,
+            // They do not need to know what kind of error has occurred. For debugging, we log the error.
+            switch error as? NetworkError {
+            case .notFound(let error):
+                self.logger.error("\(#function) \(error.message)")
+            case .validationFailed(let error):
+                self.logger.error("\(#function) \(error.message) \(String(describing: error.fails?.count?.first)) \(String(describing: error.fails?.page?.first))")
+            default:
+                break
+            }
+            
+            self.error = .failedToGetUsers(error)
             self.hasError = true
             logger.error("Failed to get users: \(error.localizedDescription)")
-        }
-    }
-}
-
-extension UsersViewModel {
-    enum ViewModelLocalizedError: LocalizedError {
-        case failedToGetUsers(Error)
-        
-        public var errorDescription: String? {
-            switch self {
-            case .failedToGetUsers:
-                return NSLocalizedString(
-                    "failed.to.get.users.error.description",
-                    value: "Failed to get users.",
-                    comment: "Failed to get users error"
-                )
-            }
-        }
-        
-        public var failureReason: String? {
-            switch self {
-            case .failedToGetUsers(let error):
-                return String(
-                    format: NSLocalizedString(
-                        "failed.to.get.users.failure.reason %@",
-                        comment: "Failed to get users failure reason"
-                    ),
-                    error.localizedDescription
-                )
-            }
-        }
-        
-        public var helpAnchor: String? {
-            switch self {
-            case .failedToGetUsers:
-                return NSLocalizedString(
-                    "failed.to.get.users.help.anchor",
-                    value: "Try again",
-                    comment: "Help anchor when failed to get users"
-                )
-            }
         }
     }
 }

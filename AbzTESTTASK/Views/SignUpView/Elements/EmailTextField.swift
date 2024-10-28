@@ -1,5 +1,5 @@
 //
-//  PhoneTextField.swift
+//  EmailTextField.swift
 //  AbzTESTTASK
 //
 //  Created by Ivan Magda on 15.10.2024.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct PhoneTextField: View {
-    @Binding var phone: String
-    @Binding var isPhoneCorrect: Bool
+struct EmailTextField: View {
+    @Binding var email: String
+    @Binding var isEmailCorrect: Bool
     @FocusState var focusedField: FocusedField?
     
     @State private var fieldState: FieldState = .initial
@@ -19,22 +19,29 @@ struct PhoneTextField: View {
     private let textFieldHeight: CGFloat = 56
     private let cornerRadius: CGFloat = 4
     private let borderWidth: CGFloat = 2
+    private let spacing: CGFloat = 2
+    private let fieldSpacing: CGFloat = 4
+    private let lineLimit = 1
             
     var body: some View {
-        VStack(spacing: 2) {
-            VStack(spacing: 4) {
-                if !phone.isEmpty {
+        VStack(spacing: spacing) {
+            VStack(spacing: fieldSpacing) {
+                if !email.isEmpty {
                     Text(LocalizedKeys.placeholder)
                         .font(.footnote)
-                        .lineLimit(1)
+                        .lineLimit(lineLimit)
                         .foregroundStyle(fieldState.fieldColor)
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                TextField("", text: $phone, prompt: placeholder)
-                    .focused($focusedField, equals: .phone)
+                
+                TextField("", text: $email, prompt: placeholder)
+                    .focused($focusedField, equals: .email)
                     .padding(.horizontal)
-                    .keyboardType(.phonePad)
+                    .textInputAutocapitalization(.never)
+                    .onSubmit {
+                        focusedField = .phone
+                    }
             }
             .frame(height: textFieldHeight)
             .overlay {
@@ -45,8 +52,8 @@ struct PhoneTextField: View {
             .onChange(of: focusedField) {
                 checkFieldState()
             }
-            .onChange(of: phone) {
-                isPhoneCorrect = phone.wholeMatch(of: Constants.phoneRegex) != nil
+            .onChange(of: email) {
+                self.isEmailCorrect = email.wholeMatch(of: Constants.emailRegex) != nil
             }
             
             HStack {
@@ -54,9 +61,7 @@ struct PhoneTextField: View {
                 case .emptyFieldError:
                     Text(LocalizedKeys.required)
                 case .incorrectValueError:
-                    Text(LocalizedKeys.invalidPhone)
-                case .initial:
-                    Text(LocalizedKeys.phoneFormatExample)
+                    Text(LocalizedKeys.invalidEmail)
                 default:
                     EmptyView()
                 }
@@ -68,7 +73,7 @@ struct PhoneTextField: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .animation(.default, value: fieldState)
-        .animation(.default, value: phone)
+        .animation(.default, value: email)
     }
     
     private var placeholder: Text {
@@ -76,18 +81,19 @@ struct PhoneTextField: View {
             .foregroundStyle(fieldState.fieldColor)
     }
     
+    /// Updates the current `fieldState` based on the focused field and its content.
     private func checkFieldState() {
         switch focusedField {
-        case .phone:
+        case .email:
             fieldState = .focused
             isEdited = true
         default:
             guard isEdited else {
                 return
             }
-            if phone.isEmpty {
+            if email.isEmpty {
                 fieldState = .emptyFieldError
-            } else if !isPhoneCorrect {
+            } else if !isEmailCorrect {
                 fieldState = .incorrectValueError
             } else {
                 fieldState = .initial
@@ -97,16 +103,14 @@ struct PhoneTextField: View {
 }
 
 #Preview {
-    PhoneTextField(phone: .constant(""), isPhoneCorrect: .constant(true))
-    PhoneTextField(phone: .constant("+380681111111"), isPhoneCorrect: .constant(true))
+    EmailTextField(email: .constant(""), isEmailCorrect: .constant(true))
+    EmailTextField(email: .constant("test@Mail.com"), isEmailCorrect: .constant(true))
 }
 
-extension PhoneTextField {
+extension EmailTextField {
     enum LocalizedKeys {
-        static let placeholder: LocalizedStringKey = "phone.textfield.placeholder"
+        static let placeholder: LocalizedStringKey = "email.textfield.placeholder"
         static let required: LocalizedStringKey = "required.field"
-        static let invalidPhone: LocalizedStringKey = "invalid.phone.format"
-        static let phoneFormatExample: String = "+38 (XXX) XXX - XX - XX"
+        static let invalidEmail: LocalizedStringKey = "invalid.email.format"
     }
 }
-

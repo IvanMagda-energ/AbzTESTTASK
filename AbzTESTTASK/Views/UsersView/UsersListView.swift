@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UsersListView: View {
     @Bindable var viewModel: UsersViewModel
+    
+    private let scaleEffect: CGFloat = 2
     var body: some View {
         List {
             ForEach(viewModel.users) { user in
@@ -28,7 +30,7 @@ struct UsersListView: View {
             if viewModel.isLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .scaleEffect(2)
+                    .scaleEffect(scaleEffect)
                     .padding()
                     .id(UUID())
             }

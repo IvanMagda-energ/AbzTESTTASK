@@ -7,7 +7,15 @@
 
 import Foundation
 
-enum SignUpResult: Hashable {
+enum SignUpResult {
     case success
     case failure
+}
+
+// Conforming to hashable
+extension SignUpResult: Hashable {}
+
+// Conforming to identifiable
+extension SignUpResult: Identifiable {
+    var id: UUID { UUID() }
 }

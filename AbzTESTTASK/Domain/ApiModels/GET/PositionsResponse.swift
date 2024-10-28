@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Responce
-struct PositionsResponse: Codable {
+struct PositionsResponse: Decodable {
     let success: Bool
     let positions: [Position]
 }
@@ -19,5 +19,5 @@ struct Position: Codable, Identifiable{
     let name: String
 }
 
-// Conforming to equitable
+// MARK: - Conforming to equitable
 extension Position: Equatable {}

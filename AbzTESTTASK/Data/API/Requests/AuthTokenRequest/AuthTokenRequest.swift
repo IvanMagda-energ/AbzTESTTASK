@@ -7,16 +7,18 @@
 
 import Foundation
 
-/// This enum conforms to the `RequestProtocol` and defines the necessary components for making an API request
-/// to obtain an authentication token.
+/// An enum that defines the API request for obtaining an authentication token, conforming to `RequestProtocol`.
 enum AuthTokenRequest: RequestProtocol {
-  case auth
-
-  var path: String {
-    "/api/v1/token"
-  }
-
-  var requestType: RequestType {
-      .GET
-  }
+    /// Retrieves an authentication token from the API.
+    case auth
+    
+    ///The API endpoint path for position-related requests.
+    var path: String {
+        "/api/v1/token"
+    }
+    
+    /// HTTP method for the request.
+    var requestType: RequestType {
+        .GET
+    }
 }

@@ -14,46 +14,62 @@ struct SignUpResultView: View {
     private let imageMaxSize: CGFloat = 200
     private let spacing: CGFloat = 24
     private let fontSize: CGFloat = 20
+    private let closeButtonPadding: CGFloat = 24
     
     var body: some View {
-        VStack(spacing: spacing) {
-            switch signUpResult {
-            case .success:
-                Image("SuccessImage")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: imageMaxSize, maxHeight: imageMaxSize)
-                
-                Text(LocalizedKeys.successfulSignUp)
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: fontSize))
-                
-                Button(LocalizedKeys.gotIt) {
-                    dismiss()
+        ZStack(alignment: .topTrailing) {
+
+            VStack(spacing: spacing) {
+                switch signUpResult {
+                case .success:
+                    Image("SuccessImage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: imageMaxSize, maxHeight: imageMaxSize)
+                    
+                    Text(LocalizedKeys.successfulSignUp)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: fontSize))
+                    
+                    Button(LocalizedKeys.gotIt) {
+                        dismiss()
+                    }
+                    .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
+                    
+                case .failure:
+                    Image("FailureImage")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: imageMaxSize, maxHeight: imageMaxSize)
+                    
+                    Text(LocalizedKeys.credentialAlreadyRegistered)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: fontSize))
+                    
+                    Button(LocalizedKeys.tryAgain) {
+                        dismiss()
+                    }
+                    .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
                 }
-                .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
-                
-            case .failure:
-                Image("FailureImage")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: imageMaxSize, maxHeight: imageMaxSize)
-                
-                Text(LocalizedKeys.credentialAlreadyRegistered)
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: fontSize))
-                
-                Button(LocalizedKeys.tryAgain) {
-                    dismiss()
-                }
-                .buttonStyle(PrimaryFilledButtonStyle(isDisabled: false))
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "xmark")
+                    .foregroundStyle(Color.secondary)
+            }
+            .padding(closeButtonPadding)
         }
     }
 }
 
 #Preview {
-    SignUpResultView(signUpResult: .success)
+    Color.clear
+        .sheet(isPresented: .constant(true)) {
+            SignUpResultView(signUpResult: .success)
+        }
 }
 
 extension SignUpResultView {

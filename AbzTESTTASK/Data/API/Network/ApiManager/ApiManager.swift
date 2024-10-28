@@ -27,8 +27,35 @@ class APIManager: APIManagerProtocol {
     func initRequest(with data: RequestProtocol, authToken: String = "") async throws -> Data {
         connectionMonitor.checkConnection()
         let (data, response) = try await urlSession.data(for: data.request(authToken: authToken))
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else { throw NetworkError.invalidServerResponse }
+        try validateResponse(data: data, response: response)
         return data
+    }
+    
+    private func validateResponse(data: Data, response: URLResponse) throws {
+        let httpResponse = response as? HTTPURLResponse
+        
+        switch httpResponse?.statusCode {
+        case 200, 201:
+            // Success
+            return
+        case 401:
+            // Unauthorized
+            let responseError: ResponseError = try parser.parse(data: data)
+            throw NetworkError.unauthorizedTokenExpired(responseError)
+        case 409:
+            // User already registered
+            let responseError: ResponseError = try parser.parse(data: data)
+            throw NetworkError.userAlreadyRegistered(responseError)
+        case 422:
+            // Validation failed
+            let responseError: ResponseError = try parser.parse(data: data)
+            throw NetworkError.validationFailed(responseError)
+        case 400, 404:
+            // Not found
+            let responseError: ResponseError = try parser.parse(data: data)
+            throw NetworkError.notFound(responseError)
+        default:
+            throw NetworkError.invalidServerResponse
+        }
     }
 }
