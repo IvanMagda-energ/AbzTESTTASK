@@ -9,12 +9,9 @@ import Foundation
 
 class APIManager: APIManagerProtocol {
     private let urlSession: URLSession
-    private let connectionMonitor: NetworkConnectionMonitor
     
-    init(urlSession: URLSession = URLSession.shared,
-         connectionMonitor: NetworkConnectionMonitor = NetworkConnectionMonitor.shared) {
+    init(urlSession: URLSession = URLSession.shared) {
         self.urlSession = urlSession
-        self.connectionMonitor = connectionMonitor
     }
     
     /// This method implement constructing and sending a network request based on the provided `RequestProtocol` object and the
@@ -25,7 +22,6 @@ class APIManager: APIManagerProtocol {
     ///   - authToken: A string representing the authentication token to be included in the request headers for authorization.
     /// - Returns: The raw `Data` object received from the server if the request is successful.
     func initRequest(with data: RequestProtocol, authToken: String = "") async throws -> Data {
-        connectionMonitor.checkConnection()
         let (data, response) = try await urlSession.data(for: data.request(authToken: authToken))
         try validateResponse(data: data, response: response)
         return data

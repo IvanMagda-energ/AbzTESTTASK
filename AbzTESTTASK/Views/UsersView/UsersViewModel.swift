@@ -69,6 +69,10 @@ final class UsersViewModel {
                 isAllPagesLoaded = true
                 logger.info("\(#function) All pages loaded. Total pages: \(result.totalPages).")
             }
+        } catch let error as URLError {
+            if error.code == .some(.notConnectedToInternet) {
+                StateManager.shared.isShowNoConnectionView = true
+            }
         } catch {
             // If the user cannot influence the occurrence of the error and cannot fix it,
             // They do not need to know what kind of error has occurred. For debugging, we log the error.

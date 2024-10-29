@@ -40,29 +40,18 @@ enum Constants {
     
     /// Regular expression for validating phone numbers.
     /// - Allows phone numbers to start with a `+` symbol.
-    /// - Accepts a sequence of 5 to 16 digits and may contain characters like `+`, `(`, `)`, or spaces.
-    /// - Requires at least one digit at the end, ensuring basic validation.
+    /// - Country code should be 380
+    /// - Requires 12 digits
     static let phoneRegex = Regex {
         Capture {
             One("+")
         }
         Capture {
-            Repeat(5...16) {
-                Capture {
-                    CharacterClass(
-                        .anyOf("+()"),
-                        .digit,
-                        (" "...".")
-                    )
-                }
-            }
+            One("380")
         }
         Capture {
-            Repeat(count: 1) {
-                CharacterClass(
-                    .anyOf("+("),
-                    .digit
-                )
+            Repeat(count: 9) {
+                CharacterClass(.digit)
             }
         }
     }
