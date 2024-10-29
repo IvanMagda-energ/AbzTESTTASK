@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var connectionMonitor = NetworkConnectionMonitor.shared
+    @State var stateManager = StateManager.shared
     @State var selectedTab: TabbedItems = .userList
     
     var body: some View {
@@ -22,7 +22,7 @@ struct ContentView: View {
             
             MainTabBarView(selectedTab: $selectedTab)
         }
-        .fullScreenCover(isPresented: $connectionMonitor.isOffline) {
+        .fullScreenCover(isPresented: $stateManager.isShowNoConnectionView) {
             NoConnectionView()
         }
     }

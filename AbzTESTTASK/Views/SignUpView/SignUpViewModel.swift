@@ -57,6 +57,10 @@ final class SignUpViewModel {
             let result: PositionsResponse = try await requestManager.initRequest(with: request)
             positions.append(contentsOf: result.positions)
             logger.info("\(#function) Request for position completed, successful fetched \(self.positions.count) items.")
+        } catch let error as URLError {
+            if error.code == .some(.notConnectedToInternet) {
+                StateManager.shared.isShowNoConnectionView = true
+            }
         } catch {
             // If the user cannot influence the occurrence of the error and cannot fix it,
             // They do not need to know what kind of error has occurred. For debugging, we log the error.
@@ -95,6 +99,10 @@ final class SignUpViewModel {
             let response: SignUpResponse = try await requestManager.initRequest(with: request)
             self.signUpResult = .success
             logger.info("\(#function) \(response.message), userId: \(response.userId)")
+        } catch let error as URLError {
+            if error.code == .some(.notConnectedToInternet) {
+                StateManager.shared.isShowNoConnectionView = true
+            }
         } catch {
             // Handle and logging network errors
             switch error as? NetworkError {
@@ -104,6 +112,7 @@ final class SignUpViewModel {
                 // Set to show appropriate screen.
                 self.signUpResult = .failure
                 self.logger.error("\(#function) \(error.message)")
+                return
             case .validationFailed(let error):
                 var fails: String {
                     String(describing: error.fails?.name?.first) + "/n" +

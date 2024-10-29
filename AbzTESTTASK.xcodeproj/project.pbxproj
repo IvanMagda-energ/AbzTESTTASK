@@ -38,6 +38,7 @@
 		CE6E58CB2CCFAD790070F860 /* UserViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */; };
 		CE6E58CE2CCFC9DF0070F860 /* MockRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58CD2CCFC9DF0070F860 /* MockRequestManager.swift */; };
 		CE6E58D02CCFE5DE0070F860 /* ProcessInfo+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58CF2CCFE5DE0070F860 /* ProcessInfo+Extensions.swift */; };
+		CE6E58D22CD03B600070F860 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E58D12CD03B600070F860 /* StateManager.swift */; };
 		CEC5DE7D2CB5535100F5EB4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE632CB5535100F5EB4C /* Preview Assets.xcassets */; };
 		CEC5DE7E2CB5535100F5EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE782CB5535100F5EB4C /* Assets.xcassets */; };
 		CEC5DE802CB5535100F5EB4C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CEC5DE7B2CB5535100F5EB4C /* Localizable.xcstrings */; };
@@ -47,7 +48,6 @@
 		CEC5DE842CB5535100F5EB4C /* ReguestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE502CB5535100F5EB4C /* ReguestManager.swift */; };
 		CEC5DE852CB5535100F5EB4C /* ReguestManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE512CB5535100F5EB4C /* ReguestManagerProtocol.swift */; };
 		CEC5DE862CB5535100F5EB4C /* RequestManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE522CB5535100F5EB4C /* RequestManager+Extensions.swift */; };
-		CEC5DE872CB5535100F5EB4C /* NetworkConnectionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE542CB5535100F5EB4C /* NetworkConnectionMonitor.swift */; };
 		CEC5DE882CB5535100F5EB4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE552CB5535100F5EB4C /* NetworkError.swift */; };
 		CEC5DE892CB5535100F5EB4C /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE572CB5535100F5EB4C /* DataParser.swift */; };
 		CEC5DE8A2CB5535100F5EB4C /* DataParserProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5DE582CB5535100F5EB4C /* DataParserProtocol.swift */; };
@@ -107,13 +107,13 @@
 		CE6E58CA2CCFAD790070F860 /* UserViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		CE6E58CD2CCFC9DF0070F860 /* MockRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequestManager.swift; sourceTree = "<group>"; };
 		CE6E58CF2CCFE5DE0070F860 /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
+		CE6E58D12CD03B600070F860 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		CEC5DE4B2CB5535100F5EB4C /* UsersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResponse.swift; sourceTree = "<group>"; };
 		CEC5DE4D2CB5535100F5EB4C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEC5DE4E2CB5535100F5EB4C /* ApiManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerProtocol.swift; sourceTree = "<group>"; };
 		CEC5DE502CB5535100F5EB4C /* ReguestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReguestManager.swift; sourceTree = "<group>"; };
 		CEC5DE512CB5535100F5EB4C /* ReguestManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReguestManagerProtocol.swift; sourceTree = "<group>"; };
 		CEC5DE522CB5535100F5EB4C /* RequestManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestManager+Extensions.swift"; sourceTree = "<group>"; };
-		CEC5DE542CB5535100F5EB4C /* NetworkConnectionMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionMonitor.swift; sourceTree = "<group>"; };
 		CEC5DE552CB5535100F5EB4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		CEC5DE572CB5535100F5EB4C /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		CEC5DE582CB5535100F5EB4C /* DataParserProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParserProtocol.swift; sourceTree = "<group>"; };
@@ -505,8 +505,8 @@
 		CEC5DEB12CB5B65C00F5EB4C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5DE542CB5535100F5EB4C /* NetworkConnectionMonitor.swift */,
 				CE5F96402CBFFC39007E6F3C /* Constants.swift */,
+				CE6E58D12CD03B600070F860 /* StateManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -645,7 +645,6 @@
 				CE5F963B2CBEED05007E6F3C /* FocusedField.swift in Sources */,
 				CE5F96672CC57A3B007E6F3C /* GalleryPickerView.swift in Sources */,
 				CE5F964F2CC3A7AE007E6F3C /* UserInfo.swift in Sources */,
-				CEC5DE872CB5535100F5EB4C /* NetworkConnectionMonitor.swift in Sources */,
 				CE6E58C92CCFAD3E0070F860 /* SignUpViewModel+Extensions.swift in Sources */,
 				CEC5DE882CB5535100F5EB4C /* NetworkError.swift in Sources */,
 				CEC5DE892CB5535100F5EB4C /* DataParser.swift in Sources */,
@@ -666,6 +665,7 @@
 				CE6E58D02CCFE5DE0070F860 /* ProcessInfo+Extensions.swift in Sources */,
 				CE5F96442CC0384D007E6F3C /* PositionRequest.swift in Sources */,
 				CEC5DE8D2CB5535100F5EB4C /* RequestType.swift in Sources */,
+				CE6E58D22CD03B600070F860 /* StateManager.swift in Sources */,
 				CEC5DE8E2CB5535100F5EB4C /* ApiConstants.swift in Sources */,
 				CEC5DE8F2CB5535100F5EB4C /* SignUpView.swift in Sources */,
 				CEC5DE902CB5535100F5EB4C /* SignUpViewModel.swift in Sources */,
@@ -827,7 +827,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AbzTESTTASK/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = lknevkrjblkejbnrververv;
+				INFOPLIST_KEY_NSCameraUsageDescription = "AbzTESTTASK need access to your camera to make photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -858,7 +858,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AbzTESTTASK/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = lknevkrjblkejbnrververv;
+				INFOPLIST_KEY_NSCameraUsageDescription = "AbzTESTTASK need access to your camera to make photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
